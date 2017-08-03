@@ -3,6 +3,8 @@
 // (See accompanying file LICENSE_1_0.txt or copy at
 // http://www.boost.org/LICENSE_1_0.txt)
 
+// This file has been modified by Microsoft on 8/2017.
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -75,7 +77,8 @@ namespace BoostTestAdapter.Boost.Runner
                     using (DebugHelper dbgHelp = new DebugHelper(this.TestRunnerExecutable))
                     {
                         supported =
-                            dbgHelp.ContainsSymbol("boost::unit_test::runtime_config::LIST_CONTENT");   // Boost 1.60/1.61
+                               dbgHelp.ContainsSymbol("boost::unit_test::runtime_config::LIST_CONTENT")         // Boost 1.60/1.61
+                            || dbgHelp.ContainsSymbol("boost::unit_test::runtime_config::btrt_list_content");   // Boost 1.64
                     }
                 }
                 catch (Win32Exception ex)
