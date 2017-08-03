@@ -13,6 +13,8 @@
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,8 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Antlr4.Runtime">
-      <HintPath>lib\Antlr4.Runtime.dll</HintPath>
+    <Reference Include="Antlr4.Runtime, Version=4.5.0.0, Culture=neutral, PublicKeyToken=09abb75b9ed49849, processorArchitecture=MSIL">
+      <HintPath>$(NuGetPackages)\Antlr4.Runtime.4.5.3\lib\net45\Antlr4.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -39,8 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DOT.cs" />
+    <Compile Include="DOTBaseListener.cs" />
     <Compile Include="DOTBaseVisitor.cs" />
     <Compile Include="DOTLexer.cs" />
+    <Compile Include="DOTListener.cs" />
     <Compile Include="DOTParser.cs" />
     <Compile Include="DOTVisitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -49,6 +53,7 @@
     <None Include="DOT.g4" />
     <None Include="DOT.tokens" />
     <None Include="DOTLexer.tokens" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="license.txt" />
