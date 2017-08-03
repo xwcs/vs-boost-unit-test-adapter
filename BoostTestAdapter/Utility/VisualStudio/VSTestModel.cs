@@ -3,6 +3,8 @@
 // (See accompanying file LICENSE_1_0.txt or copy at
 // http://www.boost.org/LICENSE_1_0.txt)
 
+// This file has been modified by Microsoft on 8/2017.
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -212,7 +214,7 @@ namespace BoostTestAdapter.Utility.VisualStudio
 
             if ((entry is LogEntryStandardOutputMessage) || (entry is LogEntryStandardErrorMessage))
             {
-                return entry.Detail.TrimEnd() + Environment.NewLine;
+                return entry.Detail.TrimEnd(null) + Environment.NewLine;
             }
 
             StringBuilder sb = new StringBuilder();
@@ -230,7 +232,7 @@ namespace BoostTestAdapter.Utility.VisualStudio
             LogEntryMemoryLeak memoryLeak = entry as LogEntryMemoryLeak;
             if (memoryLeak == null)
             {
-                sb.Append(": ").Append(entry.Detail.TrimEnd());
+                sb.Append(": ").Append(entry.Detail.TrimEnd(null));
             }
 
             LogEntryException exception = entry as LogEntryException;

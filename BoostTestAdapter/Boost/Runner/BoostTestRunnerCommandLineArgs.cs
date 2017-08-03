@@ -3,6 +3,8 @@
 // (See accompanying file LICENSE_1_0.txt or copy at
 // http://www.boost.org/LICENSE_1_0.txt)
 
+// This file has been modified by Microsoft on 8/2017.
+
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -447,7 +449,7 @@ namespace BoostTestAdapter.Boost.Runner
                 AddArgument(HelpArg, args);
 
                 // return immediately since Boost UTF should ignore the rest of the arguments
-                return AppendRedirection(args).ToString().TrimEnd();
+                return AppendRedirection(args).ToString().TrimEnd(null);
             }
 
             // --list_content
@@ -456,7 +458,7 @@ namespace BoostTestAdapter.Boost.Runner
                 AddArgument(ListContentArg, ListContentFormatToString(this.ListContent.Value), args);
 
                 // return immediately since Boost UTF should ignore the rest of the arguments
-                return AppendRedirection(args).ToString().TrimEnd();
+                return AppendRedirection(args).ToString().TrimEnd(null);
             }
 
             // --run_test=a,b,c
@@ -567,7 +569,7 @@ namespace BoostTestAdapter.Boost.Runner
                 AddArgument(SavePatternArg, Yes, args);
             }
 
-            return AppendRedirection(args).ToString().TrimEnd();
+            return AppendRedirection(args).ToString().TrimEnd(null);
         }
 
         /// <summary>

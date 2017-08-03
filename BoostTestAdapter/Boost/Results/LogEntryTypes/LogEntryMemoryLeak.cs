@@ -3,6 +3,8 @@
 // (See accompanying file LICENSE_1_0.txt or copy at
 // http://www.boost.org/LICENSE_1_0.txt)
 
+// This file has been modified by Microsoft on 8/2017.
+
 using BoostTestAdapter.Utility;
 
 namespace BoostTestAdapter.Boost.Results.LogEntryTypes
@@ -39,13 +41,13 @@ namespace BoostTestAdapter.Boost.Results.LogEntryTypes
         /// Number of bytes leaked.
         /// </summary>
         /// <remarks>The Boost UTF always reports the leak size in bytes. If null, then it means that the parsing of the respective console output failed.</remarks>
-        public uint? LeakSizeInBytes { get; set; }
+        public int? LeakSizeInBytes { get; set; }
 
         /// <summary>
         /// Property containing the memory allocation number of the leak/
         /// </summary>
         /// <remarks>The Boost UTF always reports the Memory allocation number whenever a memory leak is reported. If null, then it means that the parsing of the respective console output failed.</remarks>
-        public uint? LeakMemoryAllocationNumber { get; set; }
+        public int? LeakMemoryAllocationNumber { get; set; }
 
         /// <summary>
         /// Property containing the leaked data contents as reported by Boost UTF
@@ -60,7 +62,7 @@ namespace BoostTestAdapter.Boost.Results.LogEntryTypes
         /// <param name="leakMemoryAllocationNumber">The memory allocation number.</param>
         /// <param name="leakLeakedDataContents">The memory contents which were leaked.</param>
         /// <returns>A new LogEntryMemoryLeak instance populated accordingly</returns>
-        public static LogEntryMemoryLeak MakeLogEntryMemoryLeak(SourceFileInfo leakLocation, uint? leakSizeInBytes, uint? leakMemoryAllocationNumber, string leakLeakedDataContents)
+        public static LogEntryMemoryLeak MakeLogEntryMemoryLeak(SourceFileInfo leakLocation, int? leakSizeInBytes, int? leakMemoryAllocationNumber, string leakLeakedDataContents)
         {
             return new LogEntryMemoryLeak()
             {

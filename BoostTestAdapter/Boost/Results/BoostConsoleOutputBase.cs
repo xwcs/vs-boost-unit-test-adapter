@@ -3,6 +3,8 @@
 // (See accompanying file LICENSE_1_0.txt or copy at
 // http://www.boost.org/LICENSE_1_0.txt)
 
+// This file has been modified by Microsoft on 8/2017.
+
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
@@ -205,12 +207,12 @@ namespace BoostTestAdapter.Boost.Results
 
                     if (uint.TryParse(matchLeakInformation.Groups[4].Value, out value))
                     {
-                        leak.LeakMemoryAllocationNumber = value;
+                        leak.LeakMemoryAllocationNumber = (int) value;
                     }
 
                     if (uint.TryParse(matchLeakInformation.Groups[5].Value, out value))
                     {
-                        leak.LeakSizeInBytes = value;
+                        leak.LeakSizeInBytes = (int) value;
                     }
 
                     leak.LeakLeakedDataContents = matchLeakInformation.Groups[6].Value;
