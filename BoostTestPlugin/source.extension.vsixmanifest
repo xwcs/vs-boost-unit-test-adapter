@@ -1,14 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="BoostUnitTestAdapter.d58658cc-0b58-4bfd-b819-61b3581f2d02" Version="1.0.8.0" Language="en-US" Publisher="ETAS GmbH" />
-        <DisplayName>Boost Unit Test Adapter</DisplayName>
-        <Description xml:space="preserve">The Boost Unit Test Adapter extension has been developed for the Visual Studio 2015 Test Explorer window to allow integrated test execution of C++ projects utilizing the Boost Unit Test Framework (Boost 1.60+).
-
-In case of any issues please file an issue at https://github.com/etas/vs-boost-unit-test-adapter/issues</Description>
-        <MoreInfo>https://github.com/etas/vs-boost-unit-test-adapter</MoreInfo>
+        <Identity Id="BoostUnitTestAdapter.B5E2BDCE-7645-40D2-BBB9-FB459D44A19E" Version="1.0.8.0" Language="en-US" Publisher="Microsoft" />
+        <DisplayName>Test Adapter for Boost.Test</DisplayName>
+        <Description xml:space="preserve">Enables Visual Studio's testing tools with unit tests written for Boost.Test.</Description>
+        <MoreInfo>https://go.microsoft.com/fwlink/?linkid=853712</MoreInfo>
         <License>LICENSE_1_0.txt</License>
-        <GettingStartedGuide>https://github.com/etas/vs-boost-unit-test-adapter/wiki/User-Manual#usage</GettingStartedGuide>
+        <GettingStartedGuide>https://go.microsoft.com/fwlink/?linkid=853711</GettingStartedGuide>
         <ReleaseNotes>Release Notes.txt</ReleaseNotes>
         <Icon>boost_test_logoSquare.ico</Icon>
         <PreviewImage>Boost_preview.png</PreviewImage>
