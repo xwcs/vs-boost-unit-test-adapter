@@ -29,17 +29,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <!--MSBuild 4.0 property-->
-    <ProgramFiles32>$(MSBuildProgramFiles32)</ProgramFiles32>
-    <!--Use OS env var as a fallback:- 32 bit MSBuild 2.0/3.5 on x64 will use this-->
-    <ProgramFiles32 Condition=" '' == '$(ProgramFiles32)'">$(ProgramFiles%28x86%29)</ProgramFiles32>
-    <!-- Handle MSBuild 2.0/3.5 running in 64 bit mode - neither of the above env vars are available. http://stackoverflow.com/questions/336633
-    NB this trick (Adding a literal " (x86)" to the 64 bit Program Files path) may or may not work on all versions/locales of Windows -->
-    <ProgramFiles32 Condition="'$(ProgramFiles32)'=='' AND 'AMD64' == '$(PROCESSOR_ARCHITECTURE)'">$(ProgramFiles) (x86)</ProgramFiles32>
-    <!--Catch-all - handles .NET 2.0/3.5 non-AMD64 and .NET 2.0 on x86 -->
-    <ProgramFiles32 Condition=" '' == '$(ProgramFiles32)' ">$(ProgramFiles)</ProgramFiles32>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Antlr4.Runtime">
       <HintPath>..\Antlr.DOT\lib\Antlr4.Runtime.dll</HintPath>
@@ -47,9 +36,11 @@
     <Reference Include="FakeItEasy">
       <HintPath>$(NuGetPackages)\FakeItEasy.1.13.1\lib\net40\FakeItEasy.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.VisualStudio.TestPlatform.ObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(ProgramFiles32)\Microsoft Visual Studio 14.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll</HintPath>
+    <Reference Include="Microsoft.TestPlatform.CoreUtilities, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(NuGetPackages)\Microsoft.TestPlatform.ObjectModel.15.0.1\lib\net46\Microsoft.TestPlatform.CoreUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(NuGetPackages)\Microsoft.TestPlatform.ObjectModel.15.0.1\lib\net46\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <HintPath>$(NuGetPackages)\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
