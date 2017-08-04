@@ -7,7 +7,6 @@ $files_to_update = @(
   "BoostTestPlugin\Properties\AssemblyInfo.cs",
   "BoostTestPlugin\source.extension.vsixmanifest",
   "BoostTestShared\Properties\AssemblyInfo.cs",
-  "VisualStudio2015Adapter\Properties\AssemblyInfo.cs",
   "VisualStudioAdapter\Properties\AssemblyInfo.cs"
 )
 
