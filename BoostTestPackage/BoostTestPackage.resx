@@ -62,7 +62,7 @@
     <value>Test Adapter for Boost.Test</value>
   </data>
   <data name="112" xml:space="preserve">
-    <value />
+    <value>Enables Visual Studio's testing tools with unit tests written for Boost.Test.  The use terms and Third Party Notices are available in the extension installation directory.</value>
   </data>
   <data name="400" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\BoostTestPlugin\boost_test_logoSquare.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

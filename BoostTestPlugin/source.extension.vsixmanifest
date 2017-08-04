@@ -5,7 +5,7 @@
         <DisplayName>Test Adapter for Boost.Test</DisplayName>
         <Description xml:space="preserve">Enables Visual Studio's testing tools with unit tests written for Boost.Test.</Description>
         <MoreInfo>https://go.microsoft.com/fwlink/?linkid=853712</MoreInfo>
-        <License>LICENSE_1_0.txt</License>
+        <License>use.txt</License>
         <GettingStartedGuide>https://go.microsoft.com/fwlink/?linkid=853711</GettingStartedGuide>
         <ReleaseNotes>Release Notes.txt</ReleaseNotes>
         <Icon>boost_test_logoSquare.ico</Icon>
