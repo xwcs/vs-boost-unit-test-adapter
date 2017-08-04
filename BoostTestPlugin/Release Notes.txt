@@ -1,6 +1,20 @@
+The Test Adapter for Boost.Test is a port by Microsoft of the existing Boost Unit Test Adapter (v1.0.8) Visual Studio extension by ETAS GmbH. The adapter automatically discovers unit tests and enables IDE tools to run and manage the tests, see test execution results, and for Visual Studio Enterprise users, check code coverage. The original project can be found here: https://github.com/etas/vs-boost-unit-test-adapter.
+
+This adapter is compatible with Visual Studio 2017 only.
+
+
 # Version History
 
 The version history is presented in descending order (i.e. the latest version updates are presented at the top of the page)
+
+---
+### Version 1.0.8.1
+
+- Renamed to Test Adapter for Boost.Test.
+- Changed to support Visual Studio 2017 (only).
+- Added support for Boost 1.64.
+- Replaced the icon.
+- Removed project and item templates.
 
 ---
 ### Version 1.0.8
