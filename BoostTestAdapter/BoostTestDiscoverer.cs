@@ -3,14 +3,16 @@
 // (See accompanying file LICENSE_1_0.txt or copy at
 // http://www.boost.org/LICENSE_1_0.txt)
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
+// This file has been modified by Microsoft on 8/2017.
+
+using BoostTestAdapter.Discoverers;
 using BoostTestAdapter.Settings;
+using BoostTestAdapter.Utility;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel.Adapter;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel.Logging;
-using BoostTestAdapter.Utility;
+using System;
+using System.Collections.Generic;
 
 namespace BoostTestAdapter
 {
@@ -65,7 +67,19 @@ namespace BoostTestAdapter
         /// <param name="logger"></param>
         /// <param name="discoverySink">Unit test framework Sink</param>
         /// <remarks>Entry point of the discovery procedure</remarks>
-        public void DiscoverTests(IEnumerable<string> sources, IDiscoveryContext discoveryContext, IMessageLogger logger, ITestCaseDiscoverySink discoverySink)
+        public void DiscoverTests(IEnumerable<string> sources, IDiscoveryContext discoveryContext, IMessageLogger logger,
+            ITestCaseDiscoverySink discoverySink)
+        {
+            DiscoverTests(sources, discoveryContext, logger, discoverySink, new DefaultDiscoveryVerifier());
+        }
+
+        #endregion ITestDiscoverer
+
+        /// <summary>
+        /// DiscoverTests hook exposed for tests.
+        /// </summary>
+        public void DiscoverTests(IEnumerable<string> sources, IDiscoveryContext discoveryContext, IMessageLogger logger,
+            ITestCaseDiscoverySink discoverySink, IDiscoveryVerifier discoveryVerifier)
         {
 #if DEBUG && LAUNCH_DEBUGGER
             System.Diagnostics.Debugger.Launch();
@@ -76,12 +90,10 @@ namespace BoostTestAdapter
 
             Logger.Initialize(logger);
 
-            DiscoverTests(sources, discoveryContext, discoverySink);
+            DiscoverTests(sources, discoveryContext, discoverySink, discoveryVerifier);
 
             Logger.Shutdown();
         }
-
-        #endregion ITestDiscoverer
 
         /// <summary>
         /// Method called by BoostTestExecutor for test enumeration
@@ -91,7 +103,8 @@ namespace BoostTestAdapter
         /// <param name="discoverySink">Unit test framework Sink</param>
         /// <remarks>This method assumes that the Logger singleton is maintained by the caller.</remarks>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes")]
-        public void DiscoverTests(IEnumerable<string> sources, IDiscoveryContext discoveryContext, ITestCaseDiscoverySink discoverySink)
+        public void DiscoverTests(IEnumerable<string> sources, IDiscoveryContext discoveryContext,
+            ITestCaseDiscoverySink discoverySink, IDiscoveryVerifier discoveryVerifier)
         {
             if (sources == null)
                 return;
@@ -100,13 +113,30 @@ namespace BoostTestAdapter
 
             try
             {
-                // Filter out any sources which are not of interest
-                if (!TestSourceFilter.IsNullOrEmpty(settings.Filters))
+                // Filter out any non-interesting, non-existant, or untrusted sources.
+                List<string> filteredSources = new List<string>();
+                bool sourceFilterAvailable = !TestSourceFilter.IsNullOrEmpty(settings.Filters);
+                foreach (var source in sources)
                 {
-                    sources = sources.Where(settings.Filters.ShouldInclude);
+                    if (sourceFilterAvailable && !settings.Filters.ShouldInclude(source))
+                    {
+                        // Skip silently.
+                    }
+                    else if (!discoveryVerifier.FileExists(source))
+                    {
+                        Logger.Warn("File {0} does not exist.", source);
+                    }
+                    else if (!discoveryVerifier.IsFileZoneMyComputer(source))
+                    {
+                        Logger.Error("File {0} came from another computer and was blocked to help protect this computer.", source);
+                    }
+                    else
+                    {
+                        filteredSources.Add(source);
+                    }
                 }
 
-                var results = _boostTestDiscovererFactory.GetDiscoverers(sources.ToList(), settings);
+                var results = _boostTestDiscovererFactory.GetDiscoverers(filteredSources, settings);
                 if (results == null)
                     return;
 

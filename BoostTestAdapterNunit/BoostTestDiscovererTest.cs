@@ -43,13 +43,17 @@ namespace BoostTestAdapterNunit
             var logger = new ConsoleMessageLogger();
             var sink = new DefaultTestCaseDiscoverySink();
 
+            var discoveryVerifier = A.Fake<IDiscoveryVerifier>();
+            A.CallTo(() => discoveryVerifier.FileExists(A<string>._)).Returns(true);
+            A.CallTo(() => discoveryVerifier.IsFileZoneMyComputer(A<string>._)).Returns(true);
+
             context.RegisterSettingProvider(BoostTestAdapterSettings.XmlRootName, new BoostTestAdapterSettingsProvider());
             context.LoadEmbeddedSettings("BoostTestAdapterNunit.Resources.Settings.externalTestRunner.runsettings");
 
             var boostTestDiscovererFactory = new StubBoostTestDiscovererFactory();
 
             var boostTestDiscoverer = new BoostTestDiscoverer(boostTestDiscovererFactory);
-            boostTestDiscoverer.DiscoverTests(sources, context, logger, sink);
+            boostTestDiscoverer.DiscoverTests(sources, context, logger, sink, discoveryVerifier);
 
             Assert.That(sink.Tests, Is.Not.Empty);
 
@@ -59,6 +63,68 @@ namespace BoostTestAdapterNunit
             // the external runner does NOT support the two dll projects
             Assert.That(sink.Tests.Any(x => x.Source == "DllProject1" + BoostTestDiscoverer.DllExtension), Is.False);
             Assert.That(sink.Tests.Any(x => x.Source == "DllProject2" + BoostTestDiscoverer.DllExtension), Is.False);
+        }
+
+        [Test]
+        public void DiscoveryShouldSkipNonExistingSources()
+        {
+            var sources = new[]
+            {
+                "Exists1" + BoostTestDiscoverer.ExeExtension,
+                "DoesNotExist" + BoostTestDiscoverer.DllExtension,
+                "Exists2" + BoostTestDiscoverer.DllExtension,
+            };
+
+            var context = new DefaultTestContext();
+            var logger = new ConsoleMessageLogger();
+            var sink = new DefaultTestCaseDiscoverySink();
+
+            var discoveryVerifier = A.Fake<IDiscoveryVerifier>();
+            A.CallTo(() => discoveryVerifier.FileExists(A<string>._)).ReturnsLazily((string source) => source.StartsWith("Exists"));
+            A.CallTo(() => discoveryVerifier.IsFileZoneMyComputer(A<string>._)).Returns(true);
+
+            var boostTestDiscovererFactory = A.Fake<IBoostTestDiscovererFactory>();
+
+            var boostTestDiscoverer = new BoostTestDiscoverer(boostTestDiscovererFactory);
+            boostTestDiscoverer.DiscoverTests(sources, context, logger, sink, discoveryVerifier);
+
+            A.CallTo(() => boostTestDiscovererFactory.GetDiscoverers(
+                A<IReadOnlyCollection<string>>.That.Contains(sources[0]), A<BoostTestAdapterSettings>._)).MustHaveHappened();
+            A.CallTo(() => boostTestDiscovererFactory.GetDiscoverers(
+                A<IReadOnlyCollection<string>>.That.Contains(sources[1]), A<BoostTestAdapterSettings>._)).MustNotHaveHappened();
+            A.CallTo(() => boostTestDiscovererFactory.GetDiscoverers(
+                A<IReadOnlyCollection<string>>.That.Contains(sources[2]), A<BoostTestAdapterSettings>._)).MustHaveHappened();
+        }
+
+        [Test]
+        public void DiscoveryShouldSkipUntrustedSources()
+        {
+            var sources = new[]
+            {
+                "Untrusted1" + BoostTestDiscoverer.ExeExtension,
+                "Trusted" + BoostTestDiscoverer.DllExtension,
+                "Untrusted2" + BoostTestDiscoverer.DllExtension,
+            };
+
+            var context = new DefaultTestContext();
+            var logger = new ConsoleMessageLogger();
+            var sink = new DefaultTestCaseDiscoverySink();
+
+            var discoveryVerifier = A.Fake<IDiscoveryVerifier>();
+            A.CallTo(() => discoveryVerifier.FileExists(A<string>._)).Returns(true);
+            A.CallTo(() => discoveryVerifier.IsFileZoneMyComputer(A<string>._)).ReturnsLazily((string source) => source.StartsWith("Trusted"));
+
+            var boostTestDiscovererFactory = A.Fake<IBoostTestDiscovererFactory>();
+
+            var boostTestDiscoverer = new BoostTestDiscoverer(boostTestDiscovererFactory);
+            boostTestDiscoverer.DiscoverTests(sources, context, logger, sink, discoveryVerifier);
+
+            A.CallTo(() => boostTestDiscovererFactory.GetDiscoverers(
+                A<IReadOnlyCollection<string>>.That.Contains(sources[0]), A<BoostTestAdapterSettings>._)).MustNotHaveHappened();
+            A.CallTo(() => boostTestDiscovererFactory.GetDiscoverers(
+                A<IReadOnlyCollection<string>>.That.Contains(sources[1]), A<BoostTestAdapterSettings>._)).MustHaveHappened();
+            A.CallTo(() => boostTestDiscovererFactory.GetDiscoverers(
+                A<IReadOnlyCollection<string>>.That.Contains(sources[2]), A<BoostTestAdapterSettings>._)).MustNotHaveHappened();
         }
     }
 

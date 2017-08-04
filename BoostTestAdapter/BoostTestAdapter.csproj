@@ -110,6 +110,8 @@
     <Compile Include="Boost\Test\TestFrameworkBuilder.cs" />
     <Compile Include="Boost\Test\TestSuite.cs" />
     <Compile Include="Boost\Test\TestUnit.cs" />
+    <Compile Include="Discoverers\DefaultDiscoveryVerifier.cs" />
+    <Compile Include="Discoverers\IDiscoveryVerifier.cs" />
     <Compile Include="Discoverers\ListContentDiscoverer.cs" />
     <Compile Include="Discoverers\ExternalDiscoverer.cs" />
     <Compile Include="Discoverers\VSDiscoveryVisitor.cs" />
