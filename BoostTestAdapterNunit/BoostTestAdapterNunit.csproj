@@ -45,7 +45,7 @@
     <Reference Include="System" />
     <Reference Include="System.XML" />
   </ItemGroup>
-  <ItemGroup>
+  <ItemGroup Condition="'$(RealSign)' != 'True'">
     <Compile Include="BoostDataTestCaseVerifierTest.cs" />
     <Compile Include="BoostTestDiscovererFactoryTest.cs" />
     <Compile Include="BoostTestDiscovererTest.cs" />

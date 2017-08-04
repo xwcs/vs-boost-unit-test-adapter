@@ -30,6 +30,7 @@
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), Common.props))\Common.props" />
+  <Import Project="$(NuGetPackages)\MicroBuild.Core.0.2.0\build\MicroBuild.Core.props" Condition="Exists('$(NuGetPackages)\MicroBuild.Core.0.2.0\build\MicroBuild.Core.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -116,6 +117,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <FilesToSign Include="$(OutDir)\BoostUnitTestAdapter.vsix" Condition="'$(RealSign)' == 'True'">
+      <Authenticode>VsixSHA2</Authenticode>
+    </FilesToSign>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Antlr.DOT\Antlr.DOT.csproj">
       <Project>{488AE1CE-107D-4F5B-9F1F-ED7905D5CE75}</Project>
       <Name>Antlr.DOT</Name>
@@ -173,4 +179,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Import Project="$(NuGetPackages)\MicroBuild.Core.0.2.0\build\MicroBuild.Core.targets" Condition="Exists('$(NuGetPackages)\MicroBuild.Core.0.2.0\build\MicroBuild.Core.targets')" />
 </Project>

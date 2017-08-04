@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.26530.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoostTestAdapter", "BoostTestAdapter\BoostTestAdapter.csproj", "{BC4B3BED-9241-4DD6-8070-A9B66DFC08C1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B02289B1-AF1E-4EB8-B78B-6B89E0F29C27} = {B02289B1-AF1E-4EB8-B78B-6B89E0F29C27}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoostTestPlugin", "BoostTestPlugin\BoostTestPlugin.csproj", "{7918D2BE-590C-4F1B-9A72-9F1CE4640AA9}"
 EndProject
@@ -15,10 +18,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoostTestAdapterNunit", "Bo
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Antlr.DOT", "Antlr.DOT\Antlr.DOT.csproj", "{488AE1CE-107D-4F5B-9F1F-ED7905D5CE75}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B02289B1-AF1E-4EB8-B78B-6B89E0F29C27} = {B02289B1-AF1E-4EB8-B78B-6B89E0F29C27}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoostTestPackage", "BoostTestPackage\BoostTestPackage.csproj", "{E3C8837E-0799-4C23-B922-343DF9A3EBF6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoostTestShared", "BoostTestShared\BoostTestShared.csproj", "{678B7C85-7906-46DD-810C-E0EF0121B3B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThirdPartySigning", "ThirdPartySigning\ThirdPartySigning.csproj", "{B02289B1-AF1E-4EB8-B78B-6B89E0F29C27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -114,6 +122,18 @@ Global
 		{678B7C85-7906-46DD-810C-E0EF0121B3B3}.Release|x64.Build.0 = Release|Any CPU
 		{678B7C85-7906-46DD-810C-E0EF0121B3B3}.Release|x86.ActiveCfg = Release|Any CPU
 		{678B7C85-7906-46DD-810C-E0EF0121B3B3}.Release|x86.Build.0 = Release|Any CPU
+		{B02289B1-AF1E-4EB8-B78B-6B89E0F29C27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B02289B1-AF1E-4EB8-B78B-6B89E0F29C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B02289B1-AF1E-4EB8-B78B-6B89E0F29C27}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B02289B1-AF1E-4EB8-B78B-6B89E0F29C27}.Debug|x64.Build.0 = Debug|Any CPU
+		{B02289B1-AF1E-4EB8-B78B-6B89E0F29C27}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B02289B1-AF1E-4EB8-B78B-6B89E0F29C27}.Debug|x86.Build.0 = Debug|Any CPU
+		{B02289B1-AF1E-4EB8-B78B-6B89E0F29C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B02289B1-AF1E-4EB8-B78B-6B89E0F29C27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B02289B1-AF1E-4EB8-B78B-6B89E0F29C27}.Release|x64.ActiveCfg = Release|Any CPU
+		{B02289B1-AF1E-4EB8-B78B-6B89E0F29C27}.Release|x64.Build.0 = Release|Any CPU
+		{B02289B1-AF1E-4EB8-B78B-6B89E0F29C27}.Release|x86.ActiveCfg = Release|Any CPU
+		{B02289B1-AF1E-4EB8-B78B-6B89E0F29C27}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
