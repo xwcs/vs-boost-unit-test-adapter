@@ -61,7 +61,7 @@ namespace BoostTestAdapter.Utility
             }
 
             // Visual Studio configuration (if available) has higher priority over settings
-            var debuggingProperties = packageService?.Service.GetDebuggingProperties(source);
+            var debuggingProperties = packageService?.Service.GetDebuggingPropertiesAsync(source).Result;
             if (debuggingProperties != null)
             {
                 args.WorkingDirectory = debuggingProperties.WorkingDirectory ?? args.WorkingDirectory;

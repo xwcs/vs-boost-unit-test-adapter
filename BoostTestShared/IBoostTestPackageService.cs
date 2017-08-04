@@ -3,6 +3,7 @@
 
 using System;
 using System.ServiceModel;
+using System.Threading.Tasks;
 
 namespace BoostTestShared
 {
@@ -19,7 +20,7 @@ namespace BoostTestShared
         /// <param name="binary">Binary to get the debugging properties for</param>
         /// <returns>The debugging properties</returns>
         [OperationContract]
-        DebuggingProperties GetDebuggingProperties(string binary);
+        Task<DebuggingProperties> GetDebuggingPropertiesAsync(string binary);
     }
 
     /// <summary>

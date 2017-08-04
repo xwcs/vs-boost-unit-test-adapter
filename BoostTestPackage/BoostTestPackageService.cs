@@ -7,6 +7,7 @@ using Microsoft.VisualStudio.Shell;
 using System;
 using System.Diagnostics;
 using System.ServiceModel;
+using System.Threading.Tasks;
 
 namespace BoostTestPackage
 {
@@ -28,9 +29,9 @@ namespace BoostTestPackage
 
         #region IBoostTestPackageService
 
-        public DebuggingProperties GetDebuggingProperties(string binary)
+        public async Task<DebuggingProperties> GetDebuggingPropertiesAsync(string binary)
         {
-            var debuggingProperties = _visualStudio.GetDebuggingProperties(binary);
+            var debuggingProperties = await _visualStudio.GetDebuggingPropertiesAsync(binary);
             if (debuggingProperties != null)
             {
                 return new DebuggingProperties

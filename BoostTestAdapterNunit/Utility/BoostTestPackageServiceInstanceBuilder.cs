@@ -3,6 +3,7 @@
 
 using FakeItEasy;
 using BoostTestShared;
+using System.Threading.Tasks;
 
 namespace BoostTestAdapterNunit.Utility
 {
@@ -43,7 +44,8 @@ namespace BoostTestAdapterNunit.Utility
         {
             IBoostTestPackageService fake = A.Fake<IBoostTestPackageService>();
 
-            A.CallTo(() => fake.GetDebuggingProperties(A<string>._)).Returns(this._debuggingProperties);
+            A.CallTo(() => fake.GetDebuggingPropertiesAsync(A<string>._)).Returns(
+                Task.FromResult(this._debuggingProperties));
 
             IBoostTestPackageServiceWrapper fakeWrapper = A.Fake<IBoostTestPackageServiceWrapper>();
 

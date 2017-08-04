@@ -5,6 +5,8 @@
 
 // This file has been modified by Microsoft on 8/2017.
 
+using System.Threading.Tasks;
+
 namespace VisualStudioAdapter
 {
     /// <summary>
@@ -18,6 +20,6 @@ namespace VisualStudioAdapter
         /// </summary>
         /// <param name="binary">Binary to get the debugging properties for</param>
         /// <returns>The debugging properties</returns>
-        DebuggingProperties GetDebuggingProperties(string binary);
+        Task<DebuggingProperties> GetDebuggingPropertiesAsync(string binary);
     }
 }
