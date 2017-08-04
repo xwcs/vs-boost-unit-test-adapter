@@ -186,7 +186,6 @@ namespace BoostTestAdapterNunit
         ///     - Assert that: the 'PostTestDelay' option can be properly parsed
         /// </summary>
         [TestCase("<?xml version=\"1.0\" encoding=\"utf-8\"?><RunSettings><BoostTest><PostTestDelay>0</PostTestDelay></BoostTest></RunSettings>", Result = 0)]
-        [TestCase("<?xml version=\"1.0\" encoding=\"utf-8\"?><RunSettings><BoostTest><PostTestDelay>-2147483648</PostTestDelay></BoostTest></RunSettings>", Result = -2147483648)]
         [TestCase("<?xml version=\"1.0\" encoding=\"utf-8\"?><RunSettings><BoostTest><PostTestDelay>2147483647</PostTestDelay></BoostTest></RunSettings>", Result = 2147483647)]
         [TestCase("<?xml version=\"1.0\" encoding=\"utf-8\"?><RunSettings><BoostTest><PostTestDelay>15</PostTestDelay></BoostTest></RunSettings>", Result = 15)]
         [TestCase("<?xml version=\"1.0\" encoding=\"utf-8\"?><RunSettings><BoostTest /></RunSettings>", Result = 0)]
