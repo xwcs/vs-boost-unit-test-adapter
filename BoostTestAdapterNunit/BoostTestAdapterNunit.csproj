@@ -30,18 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FakeItEasy">
-      <HintPath>$(NuGetPackages)\FakeItEasy.1.13.1\lib\net40\FakeItEasy.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.TestPlatform.CoreUtilities, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>$(NuGetPackages)\Microsoft.TestPlatform.ObjectModel.15.0.1\lib\net46\Microsoft.TestPlatform.CoreUtilities.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.TestPlatform.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>$(NuGetPackages)\Microsoft.TestPlatform.ObjectModel.15.0.1\lib\net46\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>$(NuGetPackages)\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.XML" />
   </ItemGroup>
@@ -94,7 +82,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <EmbeddedResource Include="Resources\Log4NetConfigFile\BoostTestAdapter.dll.config" />
     <EmbeddedResource Include="Resources\ReportsLogs\MemoryLeakTest\sample.NoSourceFileAndLineNumbersAvailable.test.stdout.log" />
     <EmbeddedResource Include="Resources\ReportsLogs\MemoryLeakTest\sample.SourceFileAndLineNumbersAvailable.test.stdout.log" />
@@ -165,6 +152,17 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\ReportsLogs\DataTestCase\sample.test.report.xml" />
     <EmbeddedResource Include="Resources\ReportsLogs\DataTestCase\sample.test.log.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FakeItEasy">
+      <Version>1.13.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.TestPlatform.ObjectModel">
+      <Version>15.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="NUnit">
+      <Version>2.6.4</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
