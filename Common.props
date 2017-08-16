@@ -2,7 +2,6 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <EnlistmentRoot>$(MSBuildThisFileDirectory)</EnlistmentRoot>
-        <NuGetPackages>$(EnlistmentRoot)NuGetPackages\</NuGetPackages>
 
         <OutDir>$(EnlistmentRoot)out\binaries\$(SolutionName)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
         <OutputPath>$(OutDir)</OutputPath>
