@@ -86,7 +86,7 @@
   </xsd:complexType>
 
   <xsd:complexType name="PatternList">
-    <xsd:sequence>
+    <xsd:sequence minOccurs="0" maxOccurs="unbounded">
       <xsd:element name="Pattern" type="xsd:string" />
     </xsd:sequence>
   </xsd:complexType>
