@@ -48,15 +48,16 @@
         <!-- Test case-sensitivity -->
         <DetectFloatingPointExceptions>1</DetectFloatingPointExceptions>
 
-		
-		<RunDisabledTests>true</RunDisabledTests>
+        <RunDisabledTests>true</RunDisabledTests>
 
         <Filters>
             <Exclude>
-                <Pattern>test.exe$</Pattern>
+                <Pattern>excluded_test1.exe$</Pattern>
+                <Pattern>excluded_test2.exe$</Pattern>
             </Exclude>
             <Include>
-                <Pattern>mytest.exe$</Pattern>
+                <Pattern>included_test1.exe$</Pattern>
+                <Pattern>included_test2.exe$</Pattern>
             </Include>    
         </Filters>
     </BoostTest>

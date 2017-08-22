@@ -158,10 +158,10 @@ namespace BoostTestAdapterNunit
 
             Assert.That(settings.Filters, Is.Not.Null);
             Assert.That(settings.Filters.Include, Is.Not.Empty);
-            Assert.That(settings.Filters.Include, Is.EquivalentTo(new[] { "mytest.exe$" }));
+            Assert.That(settings.Filters.Include, Is.EquivalentTo(new[] { "included_test1.exe$", "included_test2.exe$" }));
 
             Assert.That(settings.Filters.Exclude, Is.Not.Empty);
-            Assert.That(settings.Filters.Exclude, Is.EquivalentTo(new[] { "test.exe$" }));
+            Assert.That(settings.Filters.Exclude, Is.EquivalentTo(new[] { "excluded_test1.exe$", "excluded_test2.exe$" }));
         }
         
         /// <summary>
