@@ -3,7 +3,7 @@
 // (See accompanying file LICENSE_1_0.txt or copy at
 // http://www.boost.org/LICENSE_1_0.txt)
 
-// This file has been modified by Microsoft on 8/2017.
+// This file has been modified by Microsoft on 9/2017.
 
 using BoostTestAdapter.Boost.Runner;
 using BoostTestAdapter.Boost.Test;
@@ -113,10 +113,11 @@ namespace BoostTestAdapter.Discoverers
                         }
 
                         // Parse --list_content=DOT output
-                        using (FileStream stream = File.OpenRead(args.StandardErrorFile))
+                        using (var stream = File.OpenRead(args.StandardErrorFile))
+                        using (var reader = new StreamReader(stream, System.Text.Encoding.Default))
                         {
                             TestFrameworkDOTDeserialiser deserialiser = new TestFrameworkDOTDeserialiser(source);
-                            TestFramework framework = deserialiser.Deserialise(stream);
+                            TestFramework framework = deserialiser.Deserialise(reader);
                             if ((framework != null) && (framework.MasterTestSuite != null))
                             {
                                 framework.MasterTestSuite.Apply(new VSDiscoveryVisitor(source, discoverySink));
