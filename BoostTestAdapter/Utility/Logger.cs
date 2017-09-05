@@ -32,7 +32,7 @@ namespace BoostTestAdapter.Utility
 
             ConfigureLog4Net();
 
-            Info("Logger initialized. Logging to {0}", log4net.GlobalContext.Properties["LogFilePath"]);
+            Info(Resources.LoggerInitialized, log4net.GlobalContext.Properties["LogFilePath"]);
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace BoostTestAdapter.Utility
         {
             Code.Require(ex, "ex");
 
-            Exception(ex, "Exception: {0} ({1})", ex.Message, ex.HResult);
+            Exception(ex, Resources.Exception, ex.Message, ex.HResult);
         }
 
         /// <summary>

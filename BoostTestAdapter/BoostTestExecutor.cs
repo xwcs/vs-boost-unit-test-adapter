@@ -39,6 +39,10 @@ namespace BoostTestAdapter
         public static readonly Uri ExecutorUri = new Uri(ExecutorUriString);
 
         // Error issued by Boost Test when a test cannot be executed.
+        // This string is duplicated in several places for localization:
+        // - Resources.TestNotFound
+        // - Resources.TestNameContainsSpaces
+        // - Resources.TestNameContainsCommas
         private const string TestNotFound = "Test setup error: no test cases matching filter";
 
         /// <summary>
@@ -218,7 +222,7 @@ namespace BoostTestAdapter
                         ITestBatchingStrategy batchStrategy = GetBatchStrategy(strategy, settings);
                         if (batchStrategy == null)
                         {
-                            Logger.Error("No valid test batching strategy was found for {0}. Source skipped.", source);
+                            Logger.Error(Resources.BatchStrategyNotFoundFor, source);
                             continue;
                         }
 
@@ -229,7 +233,7 @@ namespace BoostTestAdapter
                     }
                     catch (Exception ex)
                     {
-                        Logger.Error("Exception caught while running tests from {0} ({1})", source, ex.Message);
+                        Logger.Error(Resources.TestException, source, ex.Message);
                     }
                 }
             }
@@ -273,7 +277,7 @@ namespace BoostTestAdapter
             ITestBatchingStrategy batchStrategy = GetBatchStrategy(strategy, settings);
             if (batchStrategy == null)
             {
-                Logger.Error("No valid test batching strategy was found. Tests skipped.");
+                Logger.Error(Resources.BatchStrategyNotFound);
             }
             else
             {
@@ -346,20 +350,20 @@ namespace BoostTestAdapter
 
                 try
                 {
-                    Logger.Info("{0}:   -> [{1}]", ((runContext.IsBeingDebugged) ? "Debugging" : "Executing"), string.Join(", ", batch.Tests));
+                    Logger.Info(((runContext.IsBeingDebugged) ? Resources.Debugging : Resources.Executing), string.Join(", ", batch.Tests));
 
                     using (TemporaryFile report = new TemporaryFile(batch.Arguments.ReportFile))
                     using (TemporaryFile log    = new TemporaryFile(batch.Arguments.LogFile))
                     using (TemporaryFile stdout = new TemporaryFile(batch.Arguments.StandardOutFile))
                     using (TemporaryFile stderr = new TemporaryFile(batch.Arguments.StandardErrorFile))
                     {
-                        Logger.Debug("Working directory: {0}", batch.Arguments.WorkingDirectory ?? "(null)");
-                        Logger.Debug("Report file      : {0}", batch.Arguments.ReportFile);
-                        Logger.Debug("Log file         : {0}", batch.Arguments.LogFile);
-                        Logger.Debug("StdOut file      : {0}", batch.Arguments.StandardOutFile ?? "(null)");
-                        Logger.Debug("StdErr file      : {0}", batch.Arguments.StandardErrorFile ?? "(null)");
+                        Logger.Debug(Resources.WorkingDirectory, batch.Arguments.WorkingDirectory ?? "(null)");
+                        Logger.Debug(Resources.ReportFile, batch.Arguments.ReportFile);
+                        Logger.Debug(Resources.LogFile, batch.Arguments.LogFile);
+                        Logger.Debug(Resources.StdOutFile, batch.Arguments.StandardOutFile ?? "(null)");
+                        Logger.Debug(Resources.StdErrFile, batch.Arguments.StandardErrorFile ?? "(null)");
 
-                        Logger.Debug("CmdLine arguments: {0}", batch.Arguments.ToString() ?? "(null)");
+                        Logger.Debug(Resources.CmdLineArguments, batch.Arguments.ToString() ?? "(null)");
 
                         // Execute the tests
                         if (ExecuteTests(batch, runContext, frameworkHandle))
@@ -389,7 +393,7 @@ namespace BoostTestAdapter
                 }
                 catch (Exception ex)
                 {
-                    Logger.Exception(ex, "Exception caught while running test batch {0} [{1}] ({2})", batch.Source, string.Join(", ", batch.Tests), ex.Message);
+                    Logger.Exception(ex, Resources.BatchException, batch.Source, string.Join(", ", batch.Tests), ex.Message);
                 }
             }
         }
@@ -412,7 +416,7 @@ namespace BoostTestAdapter
             }
             else
             {
-                Logger.Error("No suitable executor found for [{0}].", string.Join(", ", run.Tests));
+                Logger.Error(Resources.ExecutorNotFound, string.Join(", ", run.Tests));
             }
 
             return run.Runner != null;
@@ -436,7 +440,7 @@ namespace BoostTestAdapter
             }
             catch (Exception ex)
             {
-                Logger.Exception(ex, "Could not retrieve WorkingDirectory from Visual Studio Configuration-{0}", ex.Message);
+                Logger.Exception(ex, Resources.WorkingDirectoryNotFoundEx, ex.Message);
             }
         }
 
@@ -528,7 +532,7 @@ namespace BoostTestAdapter
                     // Represent result parsing exception as a test fatal error
                     if (string.IsNullOrEmpty(text))
                     {
-                        text = "Boost Test result file was not found or is empty.";
+                        text = Resources.ResultFileNotFound;
                     }
                     
                     return testRun.Tests.Select(test => {
@@ -595,7 +599,7 @@ namespace BoostTestAdapter
 
             result.Outcome = TestOutcome.Failed;
             result.Duration = TimeSpan.FromMilliseconds(ex.Timeout);
-            result.ErrorMessage = "Timeout exceeded. Test ran for more than " + ex.Timeout + " ms.";
+            result.ErrorMessage = String.Format(Resources.Timeout, ex.Timeout);
 
             if (!string.IsNullOrEmpty(test.CodeFilePath))
             {
@@ -631,14 +635,14 @@ namespace BoostTestAdapter
         {
             if (test.FullyQualifiedName.Contains(' '))
             {
-                return TestNotFound + " (Test name contains spaces)";
+                return Resources.TestNameContainsSpaces;
             }
             else if (test.FullyQualifiedName.Contains(','))
             {
-                return TestNotFound + " (Test name contains commas)";
+                return Resources.TestNameContainsCommas;
             }
 
-            return TestNotFound;
+            return Resources.TestNotFound;
         }
 
         /// <summary>

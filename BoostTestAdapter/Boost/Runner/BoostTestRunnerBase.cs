@@ -83,12 +83,12 @@ namespace BoostTestAdapter.Boost.Runner
                 }
                 catch (Win32Exception ex)
                 {
-                    Logger.Exception(ex, "Could not create a DBGHELP instance for '{0}' to determine whether symbols are available.", this.Source);
+                    Logger.Exception(ex, Resources.CouldNotCreateDbgHelp, this.Source);
                 }
                 
                 if (!supported)
                 {
-                    Logger.Warn("Could not locate debug symbols for '{0}'. To make use of '--list_content' discovery, ensure that debug symbols are available or make use of '<ForceListContent>' via a .runsettings file.", this.TestRunnerExecutable);
+                    Logger.Warn(Resources.CouldNotLocateDebugSymbols, this.TestRunnerExecutable);
                 }
 
                 return supported;
@@ -142,7 +142,7 @@ namespace BoostTestAdapter.Boost.Runner
         /// <returns></returns>
         private static void KillProcessIncludingChildren(Process process)
         {
-            Logger.Info("Finding processes spawned by process with Id [{0}]", process.Id);
+            Logger.Info(Resources.FindingChildren, process.Id);
 
             // Once the children pids are available we start killing the processes.
             // Enumerate each and every child immediately via the .toList() method.
@@ -151,11 +151,11 @@ namespace BoostTestAdapter.Boost.Runner
             // Killing the main process
             if (KillProcess(process))
             {
-                Logger.Error("Successfully killed process {0}.", process.Id);
+                Logger.Error(Resources.TerminatedProcess, process.Id);
             }
             else
             {
-                Logger.Error("Unable to kill process {0}. Process may still be running.", process.Id);
+                Logger.Error(Resources.FailedToTerminateProcess, process.Id);
             }
 
             foreach (Process child in children)
@@ -187,7 +187,7 @@ namespace BoostTestAdapter.Boost.Runner
                 }
                 catch (ArgumentException /* ex */)
                 {
-                    Logger.Error("Child process [{0}] does not exist.", childPid);
+                    Logger.Error(Resources.ProcessNotFound, childPid);
                     // Reset child to null so that it is not enumerated
                     child = null;
                 }

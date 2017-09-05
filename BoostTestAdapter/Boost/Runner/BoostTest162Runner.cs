@@ -69,7 +69,7 @@ namespace BoostTestAdapter.Boost.Runner
                     }
                     catch (Exception ex)
                     {
-                        Logger.Exception(ex, "Failed to extract test report from standard error [{0}] to report file [{1}] ({2})", source, destination, ex.Message);
+                        Logger.Exception(ex, Resources.ReportException, source, destination, ex.Message);
                     }
                 }
             }

@@ -114,6 +114,11 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Discoverers\IBoostTestDiscoverer.cs" />
     <Compile Include="Discoverers\IBoostTestDiscovererFactory.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Utility\BoostDataTestCaseVerifier.cs" />
     <Compile Include="Utility\VisualStudio\DefaultBoostTestPackageServiceFactory.cs" />
     <Compile Include="Utility\VisualStudio\IBoostTestPackageServiceFactory.cs" />
@@ -151,6 +156,10 @@
     <EmbeddedResource Include="BoostTestAdapterSettings.xsd">
       <SubType>Designer</SubType>
       <LogicalName>BoostTestAdapterSettings.xsd</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <ProjectReference Include="..\Antlr.DOT\Antlr.DOT.csproj">
       <Project>{488ae1ce-107d-4f5b-9f1f-ed7905d5ce75}</Project>

@@ -88,7 +88,7 @@ namespace BoostTestAdapter.Discoverers
                 }
                 catch (Exception ex)
                 {
-                    Logger.Exception(ex, "Could not retrieve WorkingDirectory from Visual Studio Configuration");
+                    Logger.Exception(ex, Resources.WorkingDirectoryNotFound);
                 }
 
                 try
@@ -98,7 +98,7 @@ namespace BoostTestAdapter.Discoverers
                     {
                         // --list_content output is redirected to standard error
                         args.StandardErrorFile = output.Path;
-                        Logger.Debug("list_content file: {0}", args.StandardErrorFile);
+                        Logger.Debug(Resources.ListContentsFile, args.StandardErrorFile);
 
                         using (var context = new DefaultProcessExecutionContext())
                         { 
@@ -108,7 +108,7 @@ namespace BoostTestAdapter.Discoverers
                         // Skip sources for which the --list_content file is not available
                         if (!File.Exists(args.StandardErrorFile))
                         {
-                            Logger.Error("--list_content=DOT output for {0} is not available. Skipping.", source);
+                            Logger.Error(Resources.ListContentsNotFound, source);
                             continue;
                         }
 
@@ -126,7 +126,7 @@ namespace BoostTestAdapter.Discoverers
                 }
                 catch (Exception ex)
                 {
-                    Logger.Exception(ex, "Exception caught while discovering tests for {0} ({1} - {2})", source, ex.Message, ex.HResult);
+                    Logger.Exception(ex, Resources.DiscoveryExceptionFor, source, ex.Message, ex.HResult);
                 }
             }
         }

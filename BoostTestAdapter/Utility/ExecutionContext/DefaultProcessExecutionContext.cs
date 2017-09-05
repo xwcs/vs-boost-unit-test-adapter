@@ -39,7 +39,7 @@ namespace BoostTestAdapter.Utility.ExecutionContext
 
             if (!this.JobObject.AddProcess(process))
             {
-                Logger.Warn("Process could not be added to Job Object. Test process may end up orphaned on abrupt closure.");
+                Logger.Warn(Resources.FailedToAddProcess);
             }
 
             return process;

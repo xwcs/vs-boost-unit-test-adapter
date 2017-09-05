@@ -74,7 +74,7 @@ namespace BoostTestAdapter.Settings
                 }
                 catch (InvalidOperationException e) when (e.InnerException is XmlSchemaValidationException)
                 {
-                    throw new InvalidBoostTestAdapterSettingsException($"Invalid file defining property under {BoostTestAdapterSettings.XmlRootName}. {e.InnerException.Message}", e.InnerException);
+                    throw new InvalidBoostTestAdapterSettingsException(String.Format(Resources.InvalidPropertyFile, BoostTestAdapterSettings.XmlRootName, e.InnerException.Message), e.InnerException);
                 }
             }
         }

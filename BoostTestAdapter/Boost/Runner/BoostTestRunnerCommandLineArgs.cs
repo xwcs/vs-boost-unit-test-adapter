@@ -133,7 +133,7 @@ namespace BoostTestAdapter.Boost.Runner
 
             if ((path == StandardOutput.ToString()) || (path == StandardError.ToString()))
             {
-                throw new ArgumentException("The value of the 'path' argument is a reserved keyword", "path");
+                throw new ArgumentException(Resources.ReservedPath, "path");
             }
 
             return new Sink(path);
