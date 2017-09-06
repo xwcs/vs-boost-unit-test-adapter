@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BadFileZone" xml:space="preserve">
+    <value>File {0} came from another computer and was blocked to help protect this computer.</value>
+    <comment>{0} represents a source file name</comment>
+  </data>
+  <data name="BatchException" xml:space="preserve">
+    <value>Exception caught while running test batch {0} [{1}] ({2})</value>
+    <comment>{0} represents a source file name
+{1} represents a list of test names
+{2} represents an exception message</comment>
+  </data>
+  <data name="BatchStrategyNotFound" xml:space="preserve">
+    <value>No valid test batching strategy was found. Tests skipped.</value>
+  </data>
+  <data name="BatchStrategyNotFoundFor" xml:space="preserve">
+    <value>No valid test batching strategy was found for {0}. Source skipped.</value>
+    <comment>{0} represents a source file name</comment>
+  </data>
+  <data name="CmdLineArguments" xml:space="preserve">
+    <value>CmdLine arguments: {0}</value>
+    <comment>{0} represents command line arguments</comment>
+  </data>
+  <data name="CouldNotCreateDbgHelp" xml:space="preserve">
+    <value>Could not create a DBGHELP instance for '{0}' to determine whether symbols are available.</value>
+    <comment>{0} represents a test executable file name</comment>
+  </data>
+  <data name="CouldNotLocateDebugSymbols" xml:space="preserve">
+    <value>Could not locate debug symbols for '{0}'. To make use of '--list_content' discovery, ensure that debug symbols are available or make use of '&lt;ForceListContent&gt;' via a .runsettings file.</value>
+    <comment>{0} represents a test executable file name</comment>
+  </data>
+  <data name="Debugging" xml:space="preserve">
+    <value>Debugging:   -&gt; [{0}]</value>
+    <comment>{0} represents a list of test names</comment>
+  </data>
+  <data name="DebuggingPropertiesNotFound" xml:space="preserve">
+    <value>Could not obtain debugging properties for {0}.</value>
+    <comment>{0} represents a source file name</comment>
+  </data>
+  <data name="Discovering" xml:space="preserve">
+    <value>Discovering ({0}):   -&gt; [{1}]</value>
+    <comment>{0} represents the name of a test discoverer class
+{1} represents a list of source file names</comment>
+  </data>
+  <data name="DiscoveryException" xml:space="preserve">
+    <value>Exception caught while discovering tests: {0} ({1})</value>
+    <comment>{0} represents an exception message
+{1} represents an exception HResult</comment>
+  </data>
+  <data name="DiscoveryExceptionFor" xml:space="preserve">
+    <value>Exception caught while discovering tests for {0} ({1} - {2})</value>
+    <comment>{0} represents a source file name
+{1} represents an exception message
+{2} represents and exception HResult</comment>
+  </data>
+  <data name="Exception" xml:space="preserve">
+    <value>Exception: {0} ({1})</value>
+    <comment>{0} represents an exception message
+{1} represents an exception HResult</comment>
+  </data>
+  <data name="Executing" xml:space="preserve">
+    <value>Executing:   -&gt; [{0}]</value>
+    <comment>{0} represents a list of test names</comment>
+  </data>
+  <data name="ExecutorNotFound" xml:space="preserve">
+    <value>No suitable executor found for [{0}].</value>
+    <comment>{0} represents a list of test names</comment>
+  </data>
+  <data name="FailedToAddProcess" xml:space="preserve">
+    <value>Process could not be added to Job Object. Test process may end up orphaned on abrupt closure.</value>
+  </data>
+  <data name="FailedToTerminateProcess" xml:space="preserve">
+    <value>Unable to terminate process {0}. Process may still be running.</value>
+    <comment>{0} represents a process ID</comment>
+  </data>
+  <data name="FileNotFound" xml:space="preserve">
+    <value>File {0} does not exist.</value>
+    <comment>{0} represents a source file name</comment>
+  </data>
+  <data name="FindingChildren" xml:space="preserve">
+    <value>Finding processes spawned by process with Id [{0}]</value>
+    <comment>{0} represents a process ID</comment>
+  </data>
+  <data name="InvalidPropertyFile" xml:space="preserve">
+    <value>Invalid file defining property under {0}. {1}</value>
+    <comment>{0} represents an XML tag name
+{1} represents an exception message</comment>
+  </data>
+  <data name="ListContentsFile" xml:space="preserve">
+    <value>list_content file: {0}</value>
+    <comment>{0} represents a file path
+"list_content" is a Boost.Test parameter that should not be localized</comment>
+  </data>
+  <data name="ListContentsNotFound" xml:space="preserve">
+    <value>--list_content=DOT output for {0} is not available. Skipping.</value>
+    <comment>{0} represents a source file name
+	ListContentsFile	list_content file: {0}	{0} represents a file path
+"list_content" is a Boost.Test parameter that should not be localized</comment>
+  </data>
+  <data name="LogFile" xml:space="preserve">
+    <value>Log file         : {0}</value>
+    <comment>{0} represents a file path
+(colon should align with WorkingDirectory, ReportFile, StdOutFile, StdErrorFile)</comment>
+  </data>
+  <data name="LoggerInitialized" xml:space="preserve">
+    <value>Logger initialized. Logging to {0}</value>
+    <comment>{0} represents a log file name</comment>
+  </data>
+  <data name="ProcessNotFound" xml:space="preserve">
+    <value>Child process [{0}] does not exist.</value>
+    <comment>{0} represents a process ID</comment>
+  </data>
+  <data name="RelativePathsInUse" xml:space="preserve">
+    <value>Relative Paths are being used. Please note that test navigation from the Test Explorer window will not be available. To enable such functionality, the Use Full Paths setting under C++ -&gt; Advanced in the project's Property Page must be set to Yes (/FC).</value>
+  </data>
+  <data name="ReportException" xml:space="preserve">
+    <value>Failed to extract test report from standard error [{0}] to report file [{1}] ({2})</value>
+    <comment>{0} represents a log file name
+{1} represents a log file name
+{2} represents an exception message</comment>
+  </data>
+  <data name="ReportFile" xml:space="preserve">
+    <value>Report file      : {0}</value>
+    <comment>{0} represents a file path
+(colon should align with WorkingDirectory, LogFile, StdOutFile, StdErrorFile)</comment>
+  </data>
+  <data name="ReservedPath" xml:space="preserve">
+    <value>The value of the 'path' argument is a reserved keyword</value>
+  </data>
+  <data name="ResultFileNotFound" xml:space="preserve">
+    <value>Boost Test result file was not found or is empty.</value>
+  </data>
+  <data name="RunnerTimeout" xml:space="preserve">
+    <value>The Boost Test Runner exceeded the timeout threshold of {0}</value>
+    <comment>{0} represents a number of milliseconds</comment>
+  </data>
+  <data name="StdErrFile" xml:space="preserve">
+    <value>StdErr file      : {0}</value>
+    <comment>{0} represents a file path
+(colon should align with WorkingDirectory, LogFile, ReportFile, StdOutFile)</comment>
+  </data>
+  <data name="StdOutFile" xml:space="preserve">
+    <value>StdOut file      : {0}</value>
+    <comment>{0} represents a file path
+(colon should align with WorkingDirectory, LogFile, ReportFile, StdErrorFile)</comment>
+  </data>
+  <data name="TempDeleteException" xml:space="preserve">
+    <value>Exception caught while trying to delete temporary file [{0}]</value>
+    <comment>{0} represents a temporary file path</comment>
+  </data>
+  <data name="TerminatedProcess" xml:space="preserve">
+    <value>Successfully terminated process {0}.</value>
+    <comment>{0} represents a process ID</comment>
+  </data>
+  <data name="TestException" xml:space="preserve">
+    <value>Exception caught while running tests from {0} ({1})</value>
+    <comment>{0} represents a source file name
+{1} represents an exception message</comment>
+  </data>
+  <data name="TestNameContainsCommas" xml:space="preserve">
+    <value>Test setup error: no test cases matching filter (test name contains commas)</value>
+  </data>
+  <data name="TestNameContainsSpaces" xml:space="preserve">
+    <value>Test setup error: no test cases matching filter (test name contains spaces)</value>
+  </data>
+  <data name="TestNotFound" xml:space="preserve">
+    <value>Test setup error: no test cases matching filter</value>
+  </data>
+  <data name="Timeout" xml:space="preserve">
+    <value>Timeout exceeded. Test ran for more than {0} ms.</value>
+    <comment>{0} represents a number of milliseconds</comment>
+  </data>
+  <data name="UnableToSetInformation" xml:space="preserve">
+    <value>Unable to set information. Error: {0}</value>
+    <comment>{0} represents a Win32 error</comment>
+  </data>
+  <data name="WorkingDirectory" xml:space="preserve">
+    <value>Working directory: {0}</value>
+    <comment>{0} represents a file path
+(colon should align with ReportFile, LogFile, StdOutFile, StdErrorFile)</comment>
+  </data>
+  <data name="WorkingDirectoryNotFound" xml:space="preserve">
+    <value>Could not retrieve WorkingDirectory from Visual Studio configuration</value>
+  </data>
+  <data name="WorkingDirectoryNotFoundEx" xml:space="preserve">
+    <value>Could not retrieve WorkingDirectory from Visual Studio configuration: {0}</value>
+    <comment>{0} represents an exception message</comment>
+  </data>
+</root>

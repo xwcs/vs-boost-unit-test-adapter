@@ -47,7 +47,7 @@ namespace BoostTestAdapter.Boost.Runner
         /// </summary>
         /// <param name="timeout">The timeout threshold which was exceeded.</param>
         public TimeoutException(int timeout) :
-            this(timeout, "The Boost Test Runner exceeded the timeout threshold of " + timeout)
+            this(timeout, String.Format(Resources.RunnerTimeout, timeout))
         {
         }
 

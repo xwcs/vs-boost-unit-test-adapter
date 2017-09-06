@@ -39,7 +39,7 @@ namespace BoostTestAdapter.Utility
             }
             catch (Exception ex)
             {
-                Logger.Exception(ex, "Exception caught while trying to delete temporary file [{0}]", this.Path);
+                Logger.Exception(ex, Resources.TempDeleteException, this.Path);
             }
 
             return false;

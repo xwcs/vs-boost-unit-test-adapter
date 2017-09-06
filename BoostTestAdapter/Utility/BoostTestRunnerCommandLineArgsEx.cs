@@ -69,7 +69,7 @@ namespace BoostTestAdapter.Utility
             }
             else
             {
-                Logger.Warn("Could not obtain debugging properties for {0}.", source);
+                Logger.Warn(Resources.DebuggingPropertiesNotFound, source);
             }
 
             // Enforce Windows style backward slashes

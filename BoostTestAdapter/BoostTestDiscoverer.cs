@@ -124,11 +124,11 @@ namespace BoostTestAdapter
                     }
                     else if (!discoveryVerifier.FileExists(source))
                     {
-                        Logger.Warn("File {0} does not exist.", source);
+                        Logger.Warn(Resources.FileNotFound, source);
                     }
                     else if (!discoveryVerifier.IsFileZoneMyComputer(source))
                     {
-                        Logger.Error("File {0} came from another computer and was blocked to help protect this computer.", source);
+                        Logger.Error(Resources.BadFileZone, source);
                     }
                     else
                     {
@@ -145,14 +145,14 @@ namespace BoostTestAdapter
                 {
                     if (discoverer.Sources.Count > 0)
                     {
-                        Logger.Info("Discovering ({0}):   -> [{1}]", discoverer.Discoverer.GetType().Name, string.Join(", ", discoverer.Sources));
+                        Logger.Info(Resources.Discovering, discoverer.Discoverer.GetType().Name, string.Join(", ", discoverer.Sources));
                         discoverer.Discoverer.DiscoverTests(discoverer.Sources, discoveryContext, discoverySink);
                     }
                 }
             }
             catch (Exception ex)
             {
-                Logger.Exception(ex, "Exception caught while discovering tests: {0} ({1})", ex.Message, ex.HResult);
+                Logger.Exception(ex, Resources.DiscoveryException, ex.Message, ex.HResult);
             }
         }
     }
