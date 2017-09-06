@@ -57,10 +57,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <FilesToLocalize Include="$(OutDir)\BoostTestAdapter.dll">  
+      <TranslationFile>$(MSBuildThisFileDirectory)..\loc\lcl\{Lang}\BoostTestAdapter.lcl</TranslationFile>   
+    </FilesToLocalize>  
     <FilesToSign Include="$(OutDir)\$(AssemblyName).dll" Condition="'$(RealSign)' == 'True'">
       <Authenticode>Microsoft</Authenticode>
       <StrongName>StrongName</StrongName>
     </FilesToSign>
+    <SignFilesDependsOn Include="GatherLocalizedOutputsForSigning">   
+      <!-- Do not have this show up in Solution Explorer in VS -->   
+      <InProject>false</InProject>   
+    </SignFilesDependsOn>  
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BoostTestDiscoverer.cs" />
@@ -194,4 +201,12 @@ xcopy /c /i /y $(TargetFileName).config $(OutDir)\..\BoostTestAdapterNunit
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="GatherLocalizedOutputsForSigning" Condition="'$(LocalizationEnabled)' == 'true' AND '$(RealSign)' == 'True'">   
+    <ItemGroup>   
+      <FilesToSign Include="$(OutDir)\localize\**\$(AssemblyName).resources.dll">   
+        <Authenticode>Microsoft</Authenticode>   
+        <StrongName>StrongName</StrongName>   
+      </FilesToSign>   
+    </ItemGroup>   
+  </Target>   
 </Project>
