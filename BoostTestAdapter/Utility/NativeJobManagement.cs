@@ -1,12 +1,14 @@
 ﻿// http://stackoverflow.com/questions/6266820/working-example-of-createjobobject-setinformationjobobject-pinvoke-in-net/9164742#9164742
 
-// This file has been modified by Microsoft on 8/2017.
+// This file has been modified by Microsoft on 9/2017.
 
 using System;
 using System.Diagnostics;
 using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
 using System.Security;
+
+using BoostTestAdapter;
 
 namespace JobManagement
 {
