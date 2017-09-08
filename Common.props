@@ -8,6 +8,6 @@
 
         <IntDir>$(EnlistmentRoot)out\intermediate\$(Configuration)\$(MSBuildProjectName)\</IntDir>
         <IntermediateOutputPath>$(IntDir)</IntermediateOutputPath>
-        <BaseIntermediateOutputPath>$(IntDir)</BaseIntermediateOutputPath>
+        <BaseIntermediateOutputPath>$(EnlistmentRoot)out\intermediate\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
     </PropertyGroup>
 </Project>
