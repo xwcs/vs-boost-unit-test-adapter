@@ -40,6 +40,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BoostUnitTestAdapter</RootNamespace>
     <AssemblyName>BoostUnitTestAdapter</AssemblyName>
+    <TargetFramework>net46</TargetFramework>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>
