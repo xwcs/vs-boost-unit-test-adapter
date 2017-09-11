@@ -10,6 +10,6 @@
         <IntermediateOutputPath>$(IntDir)</IntermediateOutputPath>
         <BaseIntermediateOutputPath>$(IntDir)</BaseIntermediateOutputPath>
         
-        <NuGetPakcages>$(MSBuildThisFileDirectory)NuGetPakcages\</NuGetPakcages>
+        <NuGetPackages>$(MSBuildThisFileDirectory)NuGetPackages\</NuGetPackages>
     </PropertyGroup>
 </Project>
