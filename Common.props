@@ -9,5 +9,7 @@
         <IntDir>$(EnlistmentRoot)out\intermediate\$(MSBuildProjectName)\</IntDir>
         <IntermediateOutputPath>$(IntDir)</IntermediateOutputPath>
         <BaseIntermediateOutputPath>$(IntDir)</BaseIntermediateOutputPath>
+        
+        <NuGetPakcages>$(MSBuildThisFileDirectory)NuGetPakcages\</NuGetPakcages>
     </PropertyGroup>
 </Project>
