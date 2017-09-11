@@ -232,6 +232,15 @@ namespace BoostTestAdapter {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Found test: {0}.
+        /// </summary>
+        internal static string FoundTest {
+            get {
+                return ResourceManager.GetString("FoundTest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid file defining property under {0}. {1}.
         /// </summary>
         internal static string InvalidPropertyFile {

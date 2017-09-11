@@ -198,6 +198,10 @@
     <value>Finding processes spawned by process with Id [{0}]</value>
     <comment>{0} represents a process ID</comment>
   </data>
+  <data name="FoundTest" xml:space="preserve">
+    <value>Found test: {0}</value>
+    <comment>{0} represents the name of a unit test.</comment>
+  </data>
   <data name="InvalidPropertyFile" xml:space="preserve">
     <value>Invalid file defining property under {0}. {1}</value>
     <comment>{0} represents an XML tag name

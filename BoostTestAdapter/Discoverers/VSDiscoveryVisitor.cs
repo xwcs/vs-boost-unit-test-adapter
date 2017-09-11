@@ -3,6 +3,8 @@
 // (See accompanying file LICENSE_1_0.txt or copy at
 // http://www.boost.org/LICENSE_1_0.txt)
 
+// This file has been modified by Microsoft on 9/2017.
+
 using System.IO;
 using System.Diagnostics;
 
@@ -102,7 +104,7 @@ namespace BoostTestAdapter.Discoverers
             test.DisplayName = string.IsNullOrEmpty(displayName) ? test.DisplayName : displayName;
 
             // Send to discovery sink
-            Logger.Info("Found test: {0}", test.FullyQualifiedName);
+            Logger.Info(Resources.FoundTest, test.FullyQualifiedName);
             this.DiscoverySink.SendTestCase(test);
         }
 
