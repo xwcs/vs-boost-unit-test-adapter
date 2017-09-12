@@ -6,9 +6,9 @@
         <OutDir>$(EnlistmentRoot)out\binaries\$(Configuration)\$(MSBuildProjectName)\</OutDir>
         <OutputPath>$(OutDir)</OutputPath>
 
-        <IntDir>$(EnlistmentRoot)out\intermediate\$(MSBuildProjectName)\</IntDir>
-        <IntermediateOutputPath>$(IntDir)</IntermediateOutputPath>
-        <BaseIntermediateOutputPath>$(IntDir)</BaseIntermediateOutputPath>
+        <BaseIntermediateOutputPath>$(EnlistmentRoot)out\intermediate\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+        <IntDir>$(BaseIntermediateOutputPath)$(Configuration)</IntDir>
+        <IntermediateOutputPath>$(BaseIntermediateOutputPath)$(Configuration)</IntermediateOutputPath>
         
         <NuGetPackages>$(MSBuildThisFileDirectory)NuGetPackages\</NuGetPackages>
     </PropertyGroup>
