@@ -169,7 +169,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <ProjectReference Include="..\Antlr.DOT\Antlr.DOT.csproj">
       <Project>{488ae1ce-107d-4f5b-9f1f-ed7905d5ce75}</Project>
       <Name>Antlr.DOT</Name>
