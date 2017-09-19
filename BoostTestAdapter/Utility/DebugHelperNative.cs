@@ -126,7 +126,7 @@ namespace BoostTestAdapter.Utility
             [DllImport("DbgHelp.dll", SetLastError = true)]
             internal static extern uint SymSetOptions(Options options);
 
-            [DllImport("DbgHelp.dll", CharSet = CharSet.Ansi, SetLastError = true, BestFitMapping = false, ThrowOnUnmappableChar = true)]
+            [DllImport("DbgHelp.dll", CharSet = CharSet.Unicode, SetLastError = true, BestFitMapping = false, ThrowOnUnmappableChar = true)]
             [return: MarshalAs(UnmanagedType.Bool)]
             internal static extern bool SymInitialize(IntPtr handle, [MarshalAs(UnmanagedType.AnsiBStr)] string userSearchPath, [MarshalAs(UnmanagedType.Bool)] bool invadeProcess);
 
@@ -134,14 +134,14 @@ namespace BoostTestAdapter.Utility
             [return: MarshalAs(UnmanagedType.Bool)]
             internal static extern bool SymCleanup(IntPtr handle);
 
-            [DllImport("DbgHelp.dll", CharSet = CharSet.Ansi, SetLastError = true, BestFitMapping = false, ThrowOnUnmappableChar = true)]
+            [DllImport("DbgHelp.dll", CharSet = CharSet.Unicode, SetLastError = true, BestFitMapping = false, ThrowOnUnmappableChar = true)]
             internal static extern ulong SymLoadModuleEx(IntPtr hProcess, IntPtr hFile, string imageName, string moduleName, ulong baseOfDll, uint dllSize, IntPtr dataZero, SymLoadModuleFlags flags);
 
             [DllImport("DbgHelp.dll", SetLastError = true)]
             [return: MarshalAs(UnmanagedType.Bool)]
             public extern static bool SymUnloadModule64(IntPtr hProcess, ulong baseOfDll);
 
-            [DllImport("DbgHelp.dll", CharSet = CharSet.Ansi, SetLastError = true, BestFitMapping = false, ThrowOnUnmappableChar = true)]
+            [DllImport("DbgHelp.dll", CharSet = CharSet.Unicode, SetLastError = true, BestFitMapping = false, ThrowOnUnmappableChar = true)]
             [return: MarshalAs(UnmanagedType.Bool)]
             public extern static bool SymFromName(IntPtr hProcess, string SymName, ref SYMBOL_INFO symInfo);
 
