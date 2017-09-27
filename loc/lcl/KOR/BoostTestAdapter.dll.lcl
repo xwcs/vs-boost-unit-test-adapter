@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LCX SchemaVersion="6.0" Name="E:\A\_work\97\s\out\binaries\Release\BoostTestAdapter\BoostTestAdapter.dll" PsrId="211" FileType="1" SrcCul="en-US" TgtCul="ko-KR" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
   <OwnedComments>
     <Cmt Name="Dev" />
@@ -13,380 +13,407 @@
       <Item ItemId=";BadFileZone" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[File {0} came from another computer and was blocked to help protect this computer.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[파일 {0}은(는) 다른 컴퓨터에서 제공되었으며 이 컴퓨터를 보호하기 위해 차단되었습니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a source file name]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";BatchException" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Exception caught while running test batch {0} [{1}]5D; ({2})]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[테스트 일괄 처리 {0}[{1}]5D;을(를) 실행하는 동안 예외가 catch되었습니다({2}).]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a source file name]D;]A;{1} represents a list of test names]D;]A;{2} represents an exception message]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";BatchStrategyNotFound" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[No valid test batching strategy was found. Tests skipped.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[유효한 테스트 일괄 처리 전략이 없습니다. 테스트를 건너뛰었습니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";BatchStrategyNotFoundFor" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[No valid test batching strategy was found for {0}. Source skipped.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[{0}에 대해 유효한 테스트 일괄 처리 전략이 없습니다. 소스를 건너뛰었습니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a source file name]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";CmdLineArguments" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[CmdLine arguments: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[명령줄 인수: {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents command line arguments]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";CouldNotCreateDbgHelp" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Could not create a DBGHELP instance for '{0}' to determine whether symbols are available.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[기호를 사용할 수 있는지 여부를 확인하기 위해 '{0}'에 대한 DBGHELP 인스턴스를 만들 수 없습니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a test executable file name]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";CouldNotLocateDebugSymbols" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Could not locate debug symbols for '{0}'. To make use of '--list_content' discovery, ensure that debug symbols are available or make use of '<ForceListContent>' via a .runsettings file.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA['{0}'에 대한 디버그 기호를 찾을 수 없습니다. '--list_content' 검색을 사용하려면 디버그 기호가 사용 가능한지 확인하거나 .runsettings 파일을 통해 '<ForceListContent>'를 사용하세요.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a test executable file name]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";Debugging" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Debugging:   -> [{0}]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[디버깅:   -> [{0}]5D;]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a list of test names]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";DebuggingPropertiesNotFound" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Could not obtain debugging properties for {0}.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[{0}에 대한 디버깅 속성을 가져올 수 없습니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a source file name]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";Discovering" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Discovering ({0}):   -> [{1}]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[검색({0}):   -> [{1}]5D;]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents the name of a test discoverer class]D;]A;{1} represents a list of source file names]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";DiscoveryException" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Exception caught while discovering tests: {0} ({1})]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[테스트를 검색하는 동안 예외가 catch되었습니다. {0}({1})]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents an exception message]D;]A;{1} represents an exception HResult]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";DiscoveryExceptionFor" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Exception caught while discovering tests for {0} ({1} - {2})]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[{0}에 대한 테스트를 검색하는 동안 예외가 catch되었습니다({1} - {2}).]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a source file name]D;]A;{1} represents an exception message]D;]A;{2} represents and exception HResult]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";Exception" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Exception: {0} ({1})]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[예외: {0}({1})]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents an exception message]D;]A;{1} represents an exception HResult]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";Executing" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Executing:   -> [{0}]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[실행:   -> [{0}]5D;]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a list of test names]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";ExecutorNotFound" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[No suitable executor found for [{0}]5D;.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[[{0}]5D;에 대해 적합한 실행기를 찾을 수 없습니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a list of test names]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";FailedToAddProcess" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Process could not be added to Job Object. Test process may end up orphaned on abrupt closure.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[작업 개체에 프로세스를 추가할 수 없습니다. 갑작스러운 종료 시 테스트 프로세스가 분리될 수 있습니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";FailedToTerminateProcess" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to terminate process {0}. Process may still be running.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[프로세스 {0}을(를) 종료할 수 없습니다. 프로세스가 계속 실행될 수 있습니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a process ID]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";FileNotFound" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[File {0} does not exist.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[{0} 파일이 없습니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a source file name]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";FindingChildren" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Finding processes spawned by process with Id [{0}]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[프로세스 ID [{0}]5D;(으)로 생성된 프로세스를 찾는 중]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a process ID]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";FoundTest" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Found test: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[찾은 테스트: {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents the name of a unit test.]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";InvalidPropertyFile" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Invalid file defining property under {0}. {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[{0} 아래의 속성을 정의하는 잘못된 파일입니다. {1}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents an XML tag name]D;]A;{1} represents an exception message]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";ListContentsFile" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[list_content file: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[list_content 파일: {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a file path]D;]A;"list_content" is a Boost.Test parameter that should not be localized]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";ListContentsNotFound" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[--list_content=DOT output for {0} is not available. Skipping.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[{0}에 대한 --list_content=DOT 출력을 사용할 수 없습니다. 건너뜁니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a source file name]D;]A;	ListContentsFile	list_content file: {0}	{0} represents a file path]D;]A;"list_content" is a Boost.Test parameter that should not be localized]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";LogFile" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Log file         : {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[로그 파일: {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a file path]D;]A;(colon should align with WorkingDirectory, ReportFile, StdOutFile, StdErrorFile)]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";LoggerInitialized" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Logger initialized. Logging to {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[로거가 초기화되었습니다. {0}에 로깅합니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a log file name]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";ProcessNotFound" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Child process [{0}]5D; does not exist.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[자식 프로세스 [{0}]5D;이(가) 존재하지 않습니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a process ID]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";RelativePathsInUse" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Relative Paths are being used. Please note that test navigation from the Test Explorer window will not be available. To enable such functionality, the Use Full Paths setting under C++ -> Advanced in the project's Property Page must be set to Yes (/FC).]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[상대 경로를 사용하고 있습니다. 테스트 탐색기 창의 테스트 탐색을 사용할 수 없습니다. 이러한 기능을 사용하려면 프로젝트의 [속성]5D; 페이지에서 [C++]5D; -> [고급]5D; 아래의 [전체 경로 사용]5D; 설정을 [예(/FC)]5D;로 설정해야 합니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";ReportException" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Failed to extract test report from standard error [{0}]5D; to report file [{1}]5D; ({2})]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[표준 오류 [{0}]5D;의 테스트 보고서를 보고서 파일 [{1}]5D;에 추출하지 못했습니다({2}).]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a log file name]D;]A;{1} represents a log file name]D;]A;{2} represents an exception message]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";ReportFile" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Report file      : {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[보고서 파일: {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a file path]D;]A;(colon should align with WorkingDirectory, LogFile, StdOutFile, StdErrorFile)]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";ReservedPath" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[The value of the 'path' argument is a reserved keyword]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA['path' 인수 값은 예약된 키워드입니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";ResultFileNotFound" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Boost Test result file was not found or is empty.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Boost Test 결과 파일을 찾을 수 없거나 비어 있습니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";RunnerTimeout" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[The Boost Test Runner exceeded the timeout threshold of {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Boost Test Runner가 시간 제한 임계값인 {0}을(를) 초과했습니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a number of milliseconds]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";StdErrFile" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[StdErr file      : {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[StdErr 파일: {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a file path]D;]A;(colon should align with WorkingDirectory, LogFile, ReportFile, StdOutFile)]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";StdOutFile" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[StdOut file      : {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[StdOut 파일: {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a file path]D;]A;(colon should align with WorkingDirectory, LogFile, ReportFile, StdErrorFile)]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";TempDeleteException" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Exception caught while trying to delete temporary file [{0}]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[임시 파일 [{0}]5D;을(를) 삭제하려는 중 예외가 catch되었습니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a temporary file path]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";TerminatedProcess" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Successfully terminated process {0}.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[프로세스 {0}을(를) 종료했습니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a process ID]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";TestException" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Exception caught while running tests from {0} ({1})]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[{0}에서 테스트를 실행하는 동안 예외가 catch되었습니다({1}).]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a source file name]D;]A;{1} represents an exception message]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";TestNameContainsCommas" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Test setup error: no test cases matching filter (test name contains commas)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[테스트 설치 오류: 필터와 일치하는 테스트 사례가 없습니다(테스트 이름에 쉼표가 포함됨).]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";TestNameContainsSpaces" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Test setup error: no test cases matching filter (test name contains spaces)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[테스트 설치 오류: 필터와 일치하는 테스트 사례가 없습니다(테스트 이름에 공백이 포함됨).]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";TestNotFound" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Test setup error: no test cases matching filter]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[테스트 설치 오류: 필터와 일치하는 테스트 사례가 없습니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";Timeout" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Timeout exceeded. Test ran for more than {0} ms.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[제한 시간이 초과되었습니다. {0}ms 이상 테스트를 실행했습니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a number of milliseconds]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";UnableToSetInformation" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to set information. Error: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[정보를 설정할 수 없습니다. 오류: {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a Win32 error]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";WorkingDirectory" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Working directory: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[작업 디렉터리: {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a file path]D;]A;(colon should align with ReportFile, LogFile, StdOutFile, StdErrorFile)]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";WorkingDirectoryNotFound" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Could not retrieve WorkingDirectory from Visual Studio configuration]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Visual Studio 구성에서 WorkingDirectory를 검색할 수 없습니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";WorkingDirectoryNotFoundEx" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Could not retrieve WorkingDirectory from Visual Studio configuration: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Visual Studio 구성에서 WorkingDirectory를 검색할 수 없습니다. {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents an exception message]]></Cmt>
-        </Cmts>
       </Item>
     </Item>
   </Item>
@@ -407,6 +434,9 @@
     <Item ItemId=";FileDescription" ItemType="0" PsrId="211" Leaf="true">
       <Str Cat="Text">
         <Val><![CDATA[BoostTestAdapter]]></Val>
+        <Tgt Cat="Text" Stat="Loc" Orig="New">
+          <Val><![CDATA[BoostTestAdapter]]></Val>
+        </Tgt>
       </Str>
       <Disp Icon="Str" />
     </Item>
@@ -425,6 +455,9 @@
     <Item ItemId=";LegalCopyright" ItemType="0" PsrId="211" Leaf="true">
       <Str Cat="Text">
         <Val><![CDATA[Copyright ©  2013]]></Val>
+        <Tgt Cat="Text" Stat="Loc" Orig="New">
+          <Val><![CDATA[Copyright © 2013]]></Val>
+        </Tgt>
       </Str>
       <Disp Icon="Str" />
     </Item>
@@ -437,6 +470,9 @@
     <Item ItemId=";ProductName" ItemType="0" PsrId="211" Leaf="true">
       <Str Cat="Text">
         <Val><![CDATA[BoostTestAdapter]]></Val>
+        <Tgt Cat="Text" Stat="Loc" Orig="New">
+          <Val><![CDATA[BoostTestAdapter]]></Val>
+        </Tgt>
       </Str>
       <Disp Icon="Str" />
     </Item>
