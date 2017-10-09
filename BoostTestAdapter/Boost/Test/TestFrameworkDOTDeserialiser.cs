@@ -3,6 +3,8 @@
 // (See accompanying file LICENSE_1_0.txt or copy at
 // http://www.boost.org/LICENSE_1_0.txt)
 
+// This file has been modified by Microsoft on 9/2017.
+
 using System;
 using System.IO;
 using System.Linq;
@@ -47,7 +49,18 @@ namespace BoostTestAdapter.Boost.Test
             BoostTestFrameworkVisitor dotVisitor = new BoostTestFrameworkVisitor(this);
             return DOT.Parse(stream, dotVisitor);
         }
-        
+
+        /// <summary>
+        /// Parses the stream containing a Boost Test DOT representation of a Test Framework
+        /// </summary>
+        /// <param name="stream">The text reader consisting of a DOT representation</param>
+        /// <returns>The deserialised Test Framework</returns>
+        public TestFramework Deserialise(TextReader stream)
+        {
+            BoostTestFrameworkVisitor dotVisitor = new BoostTestFrameworkVisitor(this);
+            return DOT.Parse(stream, dotVisitor);
+        }
+
         /// <summary>
         /// Implementation of DOTBaseVisitor which creates/populates a
         /// TestFramework instance from a DOT abstract syntax tree.
