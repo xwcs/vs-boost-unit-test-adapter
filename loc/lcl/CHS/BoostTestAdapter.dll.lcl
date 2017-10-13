@@ -194,7 +194,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Invalid file defining property under {0}. {1}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[{0} 下定义属性的文件无效。{1}]]></Val>
+            <Val><![CDATA[定义 {0} 下的属性的文件无效。{1} ]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
