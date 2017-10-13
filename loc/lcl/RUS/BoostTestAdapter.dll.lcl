@@ -284,7 +284,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Boost Test result file was not found or is empty.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Файл результатов теста Boost не найден или пуст.]]></Val>
+            <Val><![CDATA[Файл результатов Boost Test не найден или пуст.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
