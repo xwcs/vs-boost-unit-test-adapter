@@ -284,7 +284,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Boost Test result file was not found or is empty.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[O arquivo do resultado do Teste de Boost não foi encontrado ou está vazio.]]></Val>
+            <Val><![CDATA[O arquivo de resultado do Boost Test não foi encontrado ou está vazio.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -293,7 +293,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The Boost Test Runner exceeded the timeout threshold of {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[O Executor do Teste de Boost excedeu o limite do tempo limite de {0}]]></Val>
+            <Val><![CDATA[O Executor do Boost Test excedeu o limite do tempo limite de {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
