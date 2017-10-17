@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LCX SchemaVersion="6.0" Name="E:\A\_work\97\s\out\binaries\Release\BoostTestAdapter\BoostTestAdapter.dll" PsrId="211" FileType="1" SrcCul="en-US" TgtCul="zh-CN" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
   <OwnedComments>
     <Cmt Name="Dev" />
@@ -13,380 +13,407 @@
       <Item ItemId=";BadFileZone" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[File {0} came from another computer and was blocked to help protect this computer.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[文件 {0} 来自其他计算机并已被阻止以帮助保护此计算机。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a source file name]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";BatchException" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Exception caught while running test batch {0} [{1}]5D; ({2})]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[运行测试批处理 {0} [{1}]5D; 时捕获到异常({2})]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a source file name]D;]A;{1} represents a list of test names]D;]A;{2} represents an exception message]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";BatchStrategyNotFound" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[No valid test batching strategy was found. Tests skipped.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[未找到任何有效的测试批处理策略。已跳过测试。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";BatchStrategyNotFoundFor" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[No valid test batching strategy was found for {0}. Source skipped.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[找不到 {0} 的任何有效的测试批处理策略。已跳过源。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a source file name]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";CmdLineArguments" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[CmdLine arguments: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[命令行参数: {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents command line arguments]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";CouldNotCreateDbgHelp" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Could not create a DBGHELP instance for '{0}' to determine whether symbols are available.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[无法为“{0}”创建一个 DBGHELP 实例以确定符号是否可用。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a test executable file name]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";CouldNotLocateDebugSymbols" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Could not locate debug symbols for '{0}'. To make use of '--list_content' discovery, ensure that debug symbols are available or make use of '<ForceListContent>' via a .runsettings file.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[找不到“{0}”的调试符号。若要使用 "--list_content" 发现，请确保调试符号可用或通过 .runsettings 文件使用 "<ForceListContent>"。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a test executable file name]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";Debugging" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Debugging:   -> [{0}]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[正在调试:   -> [{0}]5D;]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a list of test names]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";DebuggingPropertiesNotFound" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Could not obtain debugging properties for {0}.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[无法获取 {0} 的调试属性。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a source file name]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";Discovering" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Discovering ({0}):   -> [{1}]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[正在发现({0}):   -> [{1}]5D;]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents the name of a test discoverer class]D;]A;{1} represents a list of source file names]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";DiscoveryException" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Exception caught while discovering tests: {0} ({1})]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[发现测试时捕获到异常: {0} ({1})]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents an exception message]D;]A;{1} represents an exception HResult]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";DiscoveryExceptionFor" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Exception caught while discovering tests for {0} ({1} - {2})]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[发现 {0} 的测试时捕获到异常({1} - {2})]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a source file name]D;]A;{1} represents an exception message]D;]A;{2} represents and exception HResult]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";Exception" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Exception: {0} ({1})]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[异常: {0} ({1})]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents an exception message]D;]A;{1} represents an exception HResult]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";Executing" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Executing:   -> [{0}]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[正在执行:   -> [{0}]5D;]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a list of test names]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";ExecutorNotFound" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[No suitable executor found for [{0}]5D;.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[未为 [{0}]5D; 找到合适的执行程序。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a list of test names]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";FailedToAddProcess" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Process could not be added to Job Object. Test process may end up orphaned on abrupt closure.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[无法将进程添加到作业对象。测试进程可能会因突然关闭而被孤立。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";FailedToTerminateProcess" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to terminate process {0}. Process may still be running.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[无法终止进程 {0}。此进程可能仍在运行。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a process ID]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";FileNotFound" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[File {0} does not exist.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[文件 {0} 不存在。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a source file name]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";FindingChildren" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Finding processes spawned by process with Id [{0}]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[查找由 ID 为 [{0}]5D; 的进程衍生的进程]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a process ID]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";FoundTest" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Found test: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[已找到测试: {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents the name of a unit test.]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";InvalidPropertyFile" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Invalid file defining property under {0}. {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[定义 {0} 下的属性的文件无效。{1} ]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents an XML tag name]D;]A;{1} represents an exception message]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";ListContentsFile" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[list_content file: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[list_content 文件: {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a file path]D;]A;"list_content" is a Boost.Test parameter that should not be localized]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";ListContentsNotFound" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[--list_content=DOT output for {0} is not available. Skipping.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[{0} 的 --list_content=DOT 输出不可用。正在跳过。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a source file name]D;]A;	ListContentsFile	list_content file: {0}	{0} represents a file path]D;]A;"list_content" is a Boost.Test parameter that should not be localized]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";LogFile" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Log file         : {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[日志文件         : {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a file path]D;]A;(colon should align with WorkingDirectory, ReportFile, StdOutFile, StdErrorFile)]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";LoggerInitialized" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Logger initialized. Logging to {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[已初始化记录器。正在记录到 {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a log file name]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";ProcessNotFound" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Child process [{0}]5D; does not exist.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[子进程 [{0}]5D; 不存在。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a process ID]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";RelativePathsInUse" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Relative Paths are being used. Please note that test navigation from the Test Explorer window will not be available. To enable such functionality, the Use Full Paths setting under C++ -> Advanced in the project's Property Page must be set to Yes (/FC).]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[正在使用相对路径。请注意，“测试资源管理器”窗口中的测试导航将不可用。若要启用此功能，必须在项目的属性页面中的 "C++" ->“高级”下将“使用完全路径”设置为“是”(/FC)。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";ReportException" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Failed to extract test report from standard error [{0}]5D; to report file [{1}]5D; ({2})]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[未能将测试报告从标准错误 [{0}]5D; 提取到报告文件 [{1}]5D; ({2})]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a log file name]D;]A;{1} represents a log file name]D;]A;{2} represents an exception message]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";ReportFile" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Report file      : {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[报告文件      : {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a file path]D;]A;(colon should align with WorkingDirectory, LogFile, StdOutFile, StdErrorFile)]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";ReservedPath" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[The value of the 'path' argument is a reserved keyword]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA["path" 参数的值是一个保留的关键字]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";ResultFileNotFound" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Boost Test result file was not found or is empty.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[未找到 Boost Test 结果文件或为空。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";RunnerTimeout" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[The Boost Test Runner exceeded the timeout threshold of {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Boost Test 运行程序超出了超时阈值 {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a number of milliseconds]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";StdErrFile" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[StdErr file      : {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[StdErr 文件      : {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a file path]D;]A;(colon should align with WorkingDirectory, LogFile, ReportFile, StdOutFile)]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";StdOutFile" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[StdOut file      : {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[StdOut 文件      : {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a file path]D;]A;(colon should align with WorkingDirectory, LogFile, ReportFile, StdErrorFile)]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";TempDeleteException" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Exception caught while trying to delete temporary file [{0}]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[尝试删除临时文件 [{0}]5D; 时捕获到异常]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a temporary file path]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";TerminatedProcess" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Successfully terminated process {0}.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[已成功终止进程 {0}。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a process ID]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";TestException" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Exception caught while running tests from {0} ({1})]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[从 {0} 运行测试时捕获到异常({1})]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a source file name]D;]A;{1} represents an exception message]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";TestNameContainsCommas" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Test setup error: no test cases matching filter (test name contains commas)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[测试安装错误: 没有与筛选器匹配的测试用例(测试名称包含逗号)]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";TestNameContainsSpaces" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Test setup error: no test cases matching filter (test name contains spaces)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[测试安装错误: 没有与筛选器匹配的测试用例(测试名称包含空格)]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";TestNotFound" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Test setup error: no test cases matching filter]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[测试安装错误: 没有与筛选器匹配的测试用例]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";Timeout" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Timeout exceeded. Test ran for more than {0} ms.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[已超出超时时间。测试已运行超过 {0} 毫秒。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a number of milliseconds]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";UnableToSetInformation" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to set information. Error: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[无法设置信息。错误: {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a Win32 error]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";WorkingDirectory" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Working directory: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[工作目录: {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents a file path]D;]A;(colon should align with ReportFile, LogFile, StdOutFile, StdErrorFile)]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";WorkingDirectoryNotFound" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Could not retrieve WorkingDirectory from Visual Studio configuration]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[无法从 Visual Studio 配置中检索 WorkingDirectory]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";WorkingDirectoryNotFoundEx" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Could not retrieve WorkingDirectory from Visual Studio configuration: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[无法从 Visual Studio 配置中检索 WorkingDirectory: {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{0} represents an exception message]]></Cmt>
-        </Cmts>
       </Item>
     </Item>
   </Item>
@@ -407,6 +434,9 @@
     <Item ItemId=";FileDescription" ItemType="0" PsrId="211" Leaf="true">
       <Str Cat="Text">
         <Val><![CDATA[BoostTestAdapter]]></Val>
+        <Tgt Cat="Text" Stat="Loc" Orig="New">
+          <Val><![CDATA[BoostTestAdapter]]></Val>
+        </Tgt>
       </Str>
       <Disp Icon="Str" />
     </Item>
@@ -425,6 +455,9 @@
     <Item ItemId=";LegalCopyright" ItemType="0" PsrId="211" Leaf="true">
       <Str Cat="Text">
         <Val><![CDATA[Copyright ©  2013]]></Val>
+        <Tgt Cat="Text" Stat="Loc" Orig="New">
+          <Val><![CDATA[版权所有 © 2013]]></Val>
+        </Tgt>
       </Str>
       <Disp Icon="Str" />
     </Item>
@@ -437,6 +470,9 @@
     <Item ItemId=";ProductName" ItemType="0" PsrId="211" Leaf="true">
       <Str Cat="Text">
         <Val><![CDATA[BoostTestAdapter]]></Val>
+        <Tgt Cat="Text" Stat="Loc" Orig="New">
+          <Val><![CDATA[BoostTestAdapter]]></Val>
+        </Tgt>
       </Str>
       <Disp Icon="Str" />
     </Item>

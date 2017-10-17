@@ -102,6 +102,7 @@
     <EmbeddedResource Include="Resources\ReportsLogs\MemoryLeakTest\sample.test.stderr.log" />
     <EmbeddedResource Include="Resources\ListContentDOT\test_list_content.gv" />
     <EmbeddedResource Include="Resources\ListContentDOT\boost_data_test_case.gv" />
+    <EmbeddedResource Include="Resources\ListContentDOT\special_characters.list.content.gv" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\ReportsLogs\AbortedTest\sample.test.log.xml" />
