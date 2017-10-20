@@ -16,13 +16,18 @@ namespace BoostTestPackage
     /// </summary>
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]
-    [ProvideAutoLoad(VSConstants.UICONTEXT.SolutionExistsAndFullyLoaded_string)]
+    [ProvideAutoLoad(UIContextGuid)]
+    [ProvideUIContextRule(UIContextGuid, "Test Adapter for Boost.Test", "VCProject & TestExplorer",
+        new string[] { "VCProject", "TestExplorer" },
+        new string[] { VSConstants.UICONTEXT.VCProject_string, TestExplorerContextGuid })]
     [Guid(PackageGuidString)]
     [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "pkgdef, VS and vsixmanifest are valid VS terms")]
     [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]
     public sealed class BoostTestPackage : AsyncPackage, IDisposable
     {
         public const string PackageGuidString = "d57607bb-6c87-4279-91bb-e06ca10e5c3d";
+        private const string UIContextGuid = "3c4b983b-4670-40a8-9e2f-e7b457498c12";
+        private const string TestExplorerContextGuid = "ec25b527-d893-4ec0-a814-d2c9f1782997";
 
         private BoostTestPackageServiceHost _serviceHost;
 
