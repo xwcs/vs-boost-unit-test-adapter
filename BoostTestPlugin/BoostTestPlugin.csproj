@@ -24,6 +24,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <IsProductComponent Condition="'$(ProductComponent)' == 'true'">true</IsProductComponent>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Icons\Icon.ico</ApplicationIcon>
