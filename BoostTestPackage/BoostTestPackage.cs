@@ -25,7 +25,7 @@ namespace BoostTestPackage
     [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]
     public sealed class BoostTestPackage : AsyncPackage, IDisposable
     {
-        public const string PackageGuidString = "d57607bb-6c87-4279-91bb-e06ca10e5c3d";
+        public const string PackageGuidString = "6e0d1c7a-ef6a-4442-b8ce-9a58b21c3239";
         private const string UIContextGuid = "3c4b983b-4670-40a8-9e2f-e7b457498c12";
         private const string TestExplorerContextGuid = "ec25b527-d893-4ec0-a814-d2c9f1782997";
 
