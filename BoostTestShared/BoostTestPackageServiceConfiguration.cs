@@ -25,7 +25,7 @@ namespace BoostTestShared
         public static Uri ConstructPipeUri(int processId)
         {
             return new Uri(string.Format(CultureInfo.InvariantCulture,
-                "net.pipe://localhost/BoostTestPackageService.d57607bb-6c87-4279-91bb-e06ca10e5c3d.{0}/",
+                "net.pipe://localhost/BoostTestPackageService.6e0d1c7a-ef6a-4442-b8ce-9a58b21c3239.{0}/",
                 processId));
         }
 
