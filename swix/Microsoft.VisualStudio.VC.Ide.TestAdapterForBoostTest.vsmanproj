@@ -14,7 +14,7 @@
   <Import Project="$(NuGetPackages)MicroBuild.Core.0.2.0\build\MicroBuild.Core.props" />
   
   <ItemGroup>
-    <MergeManifest Include="$(OutputPath)\Microsoft.VisualStudio.VC.Ide.TestAdapterForBoostTest.json" />
+    <MergeManifest Include="$(OutputPath)\..\BoostTestPlugin\Microsoft.VisualStudio.VC.Ide.TestAdapterForBoostTest.json" />
   </ItemGroup>
 
   <Import Project="$(NuGetPackages)MicroBuild.Core.0.2.0\build\MicroBuild.Core.targets" /> 
