@@ -3,10 +3,12 @@
 // (See accompanying file LICENSE_1_0.txt or copy at
 // http://www.boost.org/LICENSE_1_0.txt)
 
+using Microsoft.Win32.SafeHandles;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Text;
 
 namespace BoostTestAdapter.Utility
 {
@@ -18,6 +20,70 @@ namespace BoostTestAdapter.Utility
     {
         private static class NativeMethods
         {
+            public const ushort IMAGE_DOS_SIGNATURE = 0x5A4D;
+            public const ushort IMAGE_NT_SIGNATURE = 0x00004550;
+
+            public const uint GENERIC_READ = unchecked(0x80000000);
+            public const uint FILE_MAP_READ = 0x0004;
+            public const uint FILE_SHARE_READ = 0x00000001;
+            public const uint OPEN_EXISTING = 3;
+            public const uint PAGE_READONLY = 0x02;
+
+            internal struct LoadedImage
+            {
+                public IntPtr MappedAddress;
+                public IntPtr FileHeader;
+            }
+
+            [StructLayout(LayoutKind.Sequential)]
+            internal unsafe struct IMAGE_DOS_HEADER
+            {
+                public ushort e_magic;
+                public ushort e_cblp;
+                public ushort e_cp;
+                public ushort e_crlc;
+                public ushort e_cparhdr;
+                public ushort e_minalloc;
+                public ushort e_maxalloc;
+                public ushort e_ss;
+                public ushort e_sp;
+                public ushort e_csum;
+                public ushort e_ip;
+                public ushort e_cs;
+                public ushort e_lfarlc;
+                public ushort e_ovno;
+                public fixed ushort e_res1[4];
+                public ushort e_oemid;
+                public ushort e_oeminfo;
+                public fixed ushort e_res2[10];
+                public int e_lfanew;
+            }
+
+            [StructLayout(LayoutKind.Explicit)]
+            internal struct IMAGE_IMPORT_DESCRIPTOR
+            {
+                [FieldOffset(0)]
+                public uint Characteristics;
+                [FieldOffset(0)]
+                public uint OriginalFirstThunk;
+
+                [FieldOffset(4)]
+                public uint TimeDateStamp;
+                [FieldOffset(8)]
+                public uint ForwarderChain;
+                [FieldOffset(12)]
+                public uint Name;
+                [FieldOffset(16)]
+                public uint FirstThunk;
+            }
+
+            [StructLayout(LayoutKind.Sequential)]
+            internal unsafe struct IMAGE_NT_HEADERS
+            {
+                public int Signature;
+                public fixed byte FileHeader[20];
+                public fixed byte OptionalHeader[224];
+            }
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct SYMBOL_INFO
@@ -40,7 +106,7 @@ namespace BoostTestAdapter.Utility
                 [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 1024)]
                 public string Name;               // Buffer
             }
-            
+
             [Flags]
             internal enum SymLoadModuleFlags : uint
             {
@@ -117,8 +183,29 @@ namespace BoostTestAdapter.Utility
 
             #region Imports
 
+            [DllImport("kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
+            public static extern SafeFileHandle CreateFile(
+                string lpFileName, uint dwDesiredAccess, uint dwShareMode, IntPtr lpSecurityAttributes,
+                uint dwCreationDisposition, uint dwFlagsAndAttributes, IntPtr hTemplateFile);
+
+            [DllImport("kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
+            public static extern SafeFileHandle CreateFileMapping(
+                SafeFileHandle hFile, IntPtr lpFileMappingAttributes, uint flProtect,
+                uint dwMaximumSizeHigh, uint dwMaximumSizeLow, string lpName);
+
+            [DllImport("kernel32.dll", SetLastError = true)]
+            public static extern bool GetFileSizeEx(SafeFileHandle hFile, out long lpFileSize);
+
+            [DllImport("kernel32.dll", SetLastError = true)]
+            public static extern IntPtr MapViewOfFile(
+                SafeFileHandle hFileMappingObject, uint dwDesiredAccess, uint dwFileOffsetHigh,
+                uint dwFileOffsetLow, UIntPtr dwNumberOfBytesToMap);
+
             [DllImport("Kernel32.dll")]
             internal static extern SetErrorFlags SetErrorMode(SetErrorFlags flags);
+
+            [DllImport("kernel32.dll", SetLastError = true)]
+            public static extern bool UnmapViewOfFile(IntPtr lpBaseAddress);
 
             [DllImport("DbgHelp.dll", SetLastError = true)]
             internal static extern Options SymGetOptions();
@@ -144,6 +231,12 @@ namespace BoostTestAdapter.Utility
             [DllImport("DbgHelp.dll", CharSet = CharSet.Unicode, SetLastError = true, BestFitMapping = false, ThrowOnUnmappableChar = true)]
             [return: MarshalAs(UnmanagedType.Bool)]
             public extern static bool SymFromName(IntPtr hProcess, string SymName, ref SYMBOL_INFO symInfo);
+
+            [DllImport("DbgHelp.dll")]
+            public static extern unsafe void* ImageDirectoryEntryToData(IntPtr pBase, byte mappedAsImage, ushort directoryEntry, uint* size);
+
+            [DllImport("dbghelp.dll")]
+            public static extern IntPtr ImageRvaToVa(IntPtr pNtHeaders, IntPtr pBase, uint rva, IntPtr pLastRvaSection);
 
             #endregion
 
@@ -191,6 +284,144 @@ namespace BoostTestAdapter.Utility
             }
 
             _libHandle = handle;
+        }
+
+        private static bool MapAndLoad(string imageName, out NativeMethods.LoadedImage loadedImage)
+        {
+            loadedImage = new NativeMethods.LoadedImage();
+
+            long fileSize;
+            IntPtr mapAddr;
+            using (var hFile = NativeMethods.CreateFile(imageName, NativeMethods.GENERIC_READ,
+                NativeMethods.FILE_SHARE_READ, IntPtr.Zero, NativeMethods.OPEN_EXISTING, 0, IntPtr.Zero))
+            {
+                if (hFile.IsInvalid)
+                    return false;
+
+                if (!NativeMethods.GetFileSizeEx(hFile, out fileSize))
+                    return false;
+
+                using (var hMapping = NativeMethods.CreateFileMapping(hFile, IntPtr.Zero, NativeMethods.PAGE_READONLY, 0, 0, null))
+                {
+                    if (hMapping.IsInvalid)
+                        return false;
+
+                    mapAddr = NativeMethods.MapViewOfFile(hMapping, NativeMethods.FILE_MAP_READ, 0, 0, UIntPtr.Zero);
+                    if (mapAddr == IntPtr.Zero)
+                        return false;
+                }
+            }
+
+            unsafe
+            {
+                if (fileSize < Marshal.SizeOf<NativeMethods.IMAGE_DOS_HEADER>())
+                    return false;
+
+                var dosHeader = (NativeMethods.IMAGE_DOS_HEADER*)mapAddr;
+                NativeMethods.IMAGE_NT_HEADERS* rawFileHeader;
+                if (dosHeader->e_magic == NativeMethods.IMAGE_DOS_SIGNATURE)
+                {
+                    if (dosHeader->e_lfanew <= 0
+                        || fileSize < dosHeader->e_lfanew + Marshal.SizeOf<NativeMethods.IMAGE_NT_HEADERS>())
+                    {
+                        return false;
+                    }
+
+                    rawFileHeader = (NativeMethods.IMAGE_NT_HEADERS*)((byte*)mapAddr + dosHeader->e_lfanew);
+                }
+                else if (dosHeader->e_magic == NativeMethods.IMAGE_NT_SIGNATURE)
+                {
+                    if (fileSize < Marshal.SizeOf<NativeMethods.IMAGE_NT_HEADERS>())
+                        return false;
+
+                    rawFileHeader = (NativeMethods.IMAGE_NT_HEADERS*)mapAddr;
+                }
+                else
+                {
+                    return false;
+                }
+
+                if (rawFileHeader->Signature != NativeMethods.IMAGE_NT_SIGNATURE)
+                    return false;
+
+                loadedImage.MappedAddress = mapAddr;
+                loadedImage.FileHeader = (IntPtr)rawFileHeader;
+                return true;
+            }
+        }
+
+        private static bool UnMapAndLoad(ref NativeMethods.LoadedImage loadedImage)
+        {
+            if (NativeMethods.UnmapViewOfFile(loadedImage.MappedAddress))
+            {
+                loadedImage = new NativeMethods.LoadedImage();
+                return true;
+            }
+            return false;
+        }
+
+        private static void ParsePeFile(string executable, Action<NativeMethods.LoadedImage> action)
+        {
+            NativeMethods.LoadedImage image = new NativeMethods.LoadedImage();
+            bool loaded = false;
+            try
+            {
+                loaded = MapAndLoad(executable, out image);
+                if (loaded)
+                    action(image);
+            }
+            finally
+            {
+                if (loaded && !UnMapAndLoad(ref image))
+                    Logger.Error(Resources.UnMapLoad);
+            }
+        }
+
+        private static unsafe void ProcessImports(string executable, Func<string, bool> predicate)
+        {
+            ParsePeFile(executable, (image) =>
+            {
+                bool shouldContinue = true;
+                uint size = 0u;
+                var directoryEntry = (NativeMethods.IMAGE_IMPORT_DESCRIPTOR*)NativeMethods.ImageDirectoryEntryToData(image.MappedAddress, 0, 1, &size);
+                while (shouldContinue && directoryEntry->OriginalFirstThunk != 0u)
+                {
+                    shouldContinue = predicate(GetString(image, directoryEntry->Name));
+                    directoryEntry++;
+                }
+            });
+        }
+
+        public static bool FindImport(string executable, string import, StringComparison comparisonType)
+        {
+            var found = false;
+            ProcessImports(executable, (currentImport) =>
+            {
+                found = currentImport.StartsWith(import, comparisonType);
+                return !found; // Continue only if not found yet.
+            });
+            return found;
+        }
+
+        private static string PtrToStringUtf8(IntPtr ptr)
+        {
+            if (ptr == IntPtr.Zero)
+                return null;
+
+            int size = 0;
+            while (Marshal.ReadByte(ptr, size) != 0)
+                ++size;
+
+            byte[] buffer = new byte[size];
+            Marshal.Copy(ptr, buffer, 0, buffer.Length);
+
+            return Encoding.UTF8.GetString(buffer);
+        }
+
+        private static string GetString(NativeMethods.LoadedImage image, uint offset)
+        {
+            IntPtr stringPtr = NativeMethods.ImageRvaToVa(image.FileHeader, image.MappedAddress, offset, IntPtr.Zero);
+            return PtrToStringUtf8(stringPtr);
         }
 
         #region IDisposable

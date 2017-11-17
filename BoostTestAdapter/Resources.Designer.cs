@@ -439,6 +439,15 @@ namespace BoostTestAdapter {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to UnMapAndLoad failed!.
+        /// </summary>
+        internal static string UnMapLoad {
+            get {
+                return ResourceManager.GetString("UnMapLoad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Working directory: {0}.
         /// </summary>
         internal static string WorkingDirectory {

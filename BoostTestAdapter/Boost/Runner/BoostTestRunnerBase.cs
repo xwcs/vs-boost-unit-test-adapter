@@ -76,8 +76,10 @@ namespace BoostTestAdapter.Boost.Runner
                     // Search symbols on the TestRunner not on the source. Source could be .dll which may not contain list_content functionality.
                     using (DebugHelper dbgHelp = new DebugHelper(this.TestRunnerExecutable))
                     {
+
                         supported =
-                               dbgHelp.ContainsSymbol("boost::unit_test::runtime_config::LIST_CONTENT")         // Boost 1.60/1.61
+                               DebugHelper.FindImport(this.TestRunnerExecutable, "boost_unit_test_framework", StringComparison.OrdinalIgnoreCase) // Boost linked dynamically
+                            || dbgHelp.ContainsSymbol("boost::unit_test::runtime_config::LIST_CONTENT")         // Boost 1.60/1.61
                             || dbgHelp.ContainsSymbol("boost::unit_test::runtime_config::btrt_list_content");   // Boost 1.64
                     }
                 }
