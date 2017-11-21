@@ -295,6 +295,9 @@
     <value>Unable to set information. Error: {0}</value>
     <comment>{0} represents a Win32 error</comment>
   </data>
+  <data name="UnMapLoad" xml:space="preserve">
+    <value>UnMapAndLoad failed!</value>
+  </data>
   <data name="WorkingDirectory" xml:space="preserve">
     <value>Working directory: {0}</value>
     <comment>{0} represents a file path
