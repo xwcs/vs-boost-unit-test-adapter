@@ -384,7 +384,7 @@ namespace BoostTestAdapter.Utility
                 bool shouldContinue = true;
                 uint size = 0u;
                 var directoryEntry = (NativeMethods.IMAGE_IMPORT_DESCRIPTOR*)NativeMethods.ImageDirectoryEntryToData(image.MappedAddress, 0, 1, &size);
-                while (shouldContinue && directoryEntry->OriginalFirstThunk != 0u)
+                while (shouldContinue && directoryEntry != null && directoryEntry->OriginalFirstThunk != 0u)
                 {
                     shouldContinue = predicate(GetString(image, directoryEntry->Name));
                     directoryEntry++;
