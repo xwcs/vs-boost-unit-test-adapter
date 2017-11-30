@@ -241,6 +241,15 @@ namespace BoostTestAdapter {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ImageDirectoryEntryToData failed!.
+        /// </summary>
+        internal static string ImageDirectoryEntryToData {
+            get {
+                return ResourceManager.GetString("ImageDirectoryEntryToData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid file defining property under {0}. {1}.
         /// </summary>
         internal static string InvalidPropertyFile {

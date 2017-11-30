@@ -310,4 +310,7 @@
     <value>Could not retrieve WorkingDirectory from Visual Studio configuration: {0}</value>
     <comment>{0} represents an exception message</comment>
   </data>
+  <data name="ImageDirectoryEntryToData" xml:space="preserve">
+    <value>ImageDirectoryEntryToData failed!</value>
+  </data>
 </root>
