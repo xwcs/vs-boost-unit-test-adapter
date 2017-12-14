@@ -60,17 +60,24 @@ namespace BoostTestAdapter.Utility
                 args.WorkingDirectory = settings.WorkingDirectory;
             }
 
-            // Visual Studio configuration (if available) has higher priority over settings
-            var debuggingProperties = packageService?.Service.GetDebuggingPropertiesAsync(source).Result;
-            if (debuggingProperties != null)
+            try
             {
-                args.WorkingDirectory = debuggingProperties.WorkingDirectory ?? args.WorkingDirectory;
-                args.SetEnvironment(debuggingProperties.Environment);
-            }
-            else
+                // Visual Studio configuration (if available) has higher priority over settings
+                var debuggingProperties = packageService?.Service.GetDebuggingPropertiesAsync(source).Result;
+                if (debuggingProperties != null)
+                {
+                    args.WorkingDirectory = debuggingProperties.WorkingDirectory ?? args.WorkingDirectory;
+                    args.SetEnvironment(debuggingProperties.Environment);
+                }
+                else
+                {
+                    Logger.Warn(Resources.DebuggingPropertiesNotFound, source);
+                }
+            }catch(Exception ex)
             {
                 Logger.Warn(Resources.DebuggingPropertiesNotFound, source);
             }
+            
 
             // Enforce Windows style backward slashes
             args.WorkingDirectory = args.WorkingDirectory.Replace('/', '\\');

@@ -81,6 +81,7 @@ namespace BoostTestAdapter.Discoverers
             {
                 try
                 {
+                    //System.Diagnostics.Debugger.Launch();
                     using (var packageService = _packageServiceFactory.Create())
                     {
                         args.SetWorkingEnvironment(source, settings, packageService);
