@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="BoostUnitTestAdapter.95183667-1f65-419b-9cac-c9fbbed28f8b" Version="0.0.0.0" Language="en-US" Publisher="Microsoft" />
+        <Identity Id="BoostUnitTestAdapter_Laco.1B328B2B-7CB4-4E92-84DC-E7BABC80C53A" Version="1.1.0.0" Language="en-US" Publisher="Laco" />
         <DisplayName>Test Adapter for Boost.Test</DisplayName>
         <Description xml:space="preserve">Enables Visual Studio's testing tools with unit tests written for Boost.Test.</Description>
         <PackageId>Microsoft.VisualStudio.VC.Ide.TestAdapterForBoostTest</PackageId>
@@ -13,7 +13,7 @@
         <PreviewImage>Boost_preview.png</PreviewImage>
         <Tags>C++, Unit Testing, Testing, test explorer, TDD, Boost, Boost Test Library, Visual Studio, Test Adapter</Tags>
     </Metadata>
-    <Installation>
+    <Installation AllUsers="true">
         <InstallationTarget Version="[15.0,16.0)" Id="Microsoft.VisualStudio.Pro" />
         <InstallationTarget Version="[15.0,16.0)" Id="Microsoft.VisualStudio.Community" />
         <InstallationTarget Version="[15.0,16.0)" Id="Microsoft.VisualStudio.Enterprise" />
